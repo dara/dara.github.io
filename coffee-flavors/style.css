@@ -1,0 +1,111 @@
+@font-face {
+    font-family: 'Overused Grotesk';
+    src: url('fonts/OverusedGrotesk-VF.woff2') format('woff2 supports variations');
+    font-weight: 300 900;
+}
+
+html, body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+}
+
+body {
+    background: black;
+    font-family: 'Overused Grotesk', sans-serif;
+    font-weight: 450;
+    font-size: 20px;
+    display: flex;
+    flex-direction: row;
+    overflow: hidden;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    letter-spacing: -0.01em;
+    line-height: 1.2;
+}
+
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+.flavor-container {
+    flex-grow: 1;
+    overflow: auto;
+    transition: flex-basis 0.5s ease;
+    display: flex;
+    flex-direction: column;
+}
+
+.flavor {
+    opacity: 0;
+    flex-grow: 1;
+    padding: 10px 10px 14px 13px;
+    transition: flex-grow 0.5s ease;
+    position: relative;
+}
+
+.flavor .label {
+    display: flex;
+    justify-content: space-between;
+}
+
+.flavor.expandable {
+    cursor: pointer;
+}
+
+.flavor:not(.expandable) {
+    cursor: default;
+}
+
+.flavor-container.active > .flavor {
+    flex-grow: 0;
+}
+
+body > .active > .flavor:not(.expanded) {
+    display: none;
+}
+
+.flavor-container.active > .flavor.expanded {
+    flex-grow: 1;
+}
+
+.flavor > .flavor-container {
+    top: 0;
+    left: 50%;
+    right: 0;
+    height: 100%;
+    position: absolute;
+    display: none;
+    flex-direction: column;
+    flex-grow: 1;
+}
+
+.flavor.expanded > .flavor-container {
+    display: flex;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@media (max-width: 768px) {
+    body { font-size: 18px; }
+
+    .flavor > .flavor-container { left: 64px; }
+
+    .active > .flavor.expanded > div.label {
+        transform: rotate(270deg);
+        transform-origin: left top;
+        position: absolute;
+        left: 10px;
+        bottom: -8px;
+    }
+
+    .active > .flavor.expanded > div.label .count-label {
+        display: none;
+    }
+}
