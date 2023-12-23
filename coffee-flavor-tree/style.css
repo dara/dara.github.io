@@ -39,27 +39,34 @@ body {
     flex-direction: column;
 }
 
+/* Flavor Styles */
 .flavor {
     opacity: 0;
     flex-grow: 1;
-    padding: 10px 10px 14px 13px;
     transition: flex-grow 0.5s ease;
     position: relative;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
 
 .flavor .label {
     display: flex;
+    padding: 20px;
     justify-content: space-between;
 }
 
-.flavor.expandable {
-    cursor: pointer;
+.flavor .label > * {
+    flex-grow: 0;
 }
 
-.flavor:not(.expandable) {
-    cursor: default;
+.flavor .description {
+    padding: 20px;
+    display: none;
 }
 
+/* Active Flavor Container Styles */
 .flavor-container.active > .flavor {
     flex-grow: 0;
 }
@@ -72,6 +79,31 @@ body > .active > .flavor:not(.expanded) {
     flex-grow: 1;
 }
 
+.flavor-container.active > .flavor.expanded > .label {
+    width: 50%;
+}
+
+.flavor .description {
+    max-width: 24em;
+}
+
+.flavor-container.active > .flavor.level-0.expanded > .description {
+    width: 25%;
+}
+
+.flavor-container.active > .flavor.level-1.expanded > .description {
+    width: 50%;
+}
+
+.flavor-container.active > .flavor.level-2.expanded > .description {
+    width: 100%;
+}
+
+.flavor-container.active > .flavor.expanded > .description {
+    display: block;
+}
+
+/* Nested Flavor Container Styles */
 .flavor > .flavor-container {
     top: 0;
     left: 50%;
@@ -87,25 +119,54 @@ body > .active > .flavor:not(.expanded) {
     display: flex;
 }
 
+/* Animation */
 @keyframes fadeIn {
     from { opacity: 0; }
     to { opacity: 1; }
 }
 
+/* Media Queries */
 @media (max-width: 768px) {
-    body { font-size: 18px; }
-
-    .flavor > .flavor-container { left: 64px; }
-
-    .active > .flavor.expanded > div.label {
-        transform: rotate(270deg);
-        transform-origin: left top;
-        position: absolute;
-        left: 10px;
-        bottom: -8px;
+    body {
+        font-size: 17px;
     }
 
-    .active > .flavor.expanded > div.label .count-label {
-        display: none;
+    .flavor .label {
+        padding: 10px;
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .flavor-container.active > .flavor.expanded > .label {
+        width: 100%;
+    }
+
+    .flavor-container.active > .flavor.level-1.expanded.expanded > .label {
+        width: 50%;
+    }
+
+    .flavor .description {
+        padding: 10px;
+        margin-bottom: 10px;
+    }
+
+    .flavor-container.active > .flavor.level-0.expanded > .description {
+        width: 100%;
+    }
+
+    .flavor-container.active > .flavor.level-1.expanded > .description {
+        width: 50%;
+    }
+
+    .flavor-container.active > .flavor.level-2.expanded > .description {
+        width: 100%;
+    }
+
+    .flavor.level-0 > .flavor-container {
+        position: relative;
+        left: 0;
+        width: auto;
+        height: auto;
+        padding: 0 0 0 10px;
     }
 }
