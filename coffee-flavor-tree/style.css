@@ -151,7 +151,7 @@ body > .active > .flavor:not(.expanded) {
     }
 
     .flavor-container.active > .flavor.level-0.expanded > .description {
-        width: 100%;
+        display: none;
     }
 
     .flavor-container.active > .flavor.level-1.expanded > .description {
