@@ -79,8 +79,20 @@ body > .active > .flavor:not(.expanded) {
     flex-grow: 1;
 }
 
-.flavor-container.active > .flavor.expanded > .label {
+.flavor-container.active > .flavor.level-0 > .label {
     width: 50%;
+}
+
+.flavor-container.active > .flavor.level-1 > .label {
+    width: 100%;
+}
+
+.flavor-container.active > .flavor.level-1.expanded > .label {
+    width: 50%;
+}
+
+.flavor-container.active > .flavor.level-2 > .label {
+    width: 100%;
 }
 
 .flavor .description {

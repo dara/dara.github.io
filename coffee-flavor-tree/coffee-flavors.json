@@ -8,7 +8,7 @@
         {
           "name": "pipe tobacco",
           "color": "#967758",
-          "description": "Resemble the aroma and flavor of tobacco leaves, adding a subtle smokiness and depth to the brew."
+          "description": "Pipe tobacco notes in coffee resemble the aroma and flavor of tobacco leaves, adding a subtle smokiness and depth to the brew."
         },
         {
           "name": "tobacco",
@@ -45,17 +45,17 @@
         {
           "name": "cereal",
           "color": "#e4bd2d",
-          "description": "Bring out grainy and malty flavors, offering a comforting and slightly nutty undertone.",
+          "description": "Cereal notes in coffee bring out grainy and malty flavors, offering a comforting and slightly nutty undertone.",
           "children": [
             {
               "name": "grain",
               "color": "#d0a588",
-              "description": "Resemble the taste of various grains, contributing a wholesome and hearty character to the brew."
+              "description": "Grainy coffee flavors resemble the taste of various grains, contributing a wholesome and hearty character to the brew."
             },
             {
               "name": "malt",
               "color": "#ec9b65",
-              "description": "Akin to the sweetness and depth found in malted grains."
+              "description": "Malt notes in coffee are akin to the sweetness and depth found in malted grains."
             }
           ]
         }
@@ -69,17 +69,17 @@
         {
           "name": "pungent",
           "color": "#734864",
-          "description": "Add a sharp and intense element to the brew, creating a robust and invigorating taste experience."
+          "description": "Pungent coffee flavors add a sharp and intense element to the brew, creating a robust and invigorating taste experience."
         },
         {
           "name": "pepper",
           "color": "#9C1C30",
-          "description": "Resemble the spiciness of black pepper, contributing a zesty and tingling sensation to the flavor profile."
+          "description": "Pepper notes in coffee resemble the spiciness of black pepper, contributing a zesty and tingling sensation to the flavor profile."
         },
         {
           "name": "brown spice",
           "color": "#99642B",
-          "description": "Include anise, nutmeg, cinnamon, and clove. These spices add a warm and aromatic quality to the brew.",
+          "description": "Brown spice flavors in coffee include anise, nutmeg, cinnamon, and clove. These spices add a warm and aromatic quality to the brew.",
           "children": [
             {
               "name": "anise",
@@ -108,12 +108,12 @@
     {
       "name": "nutty/cocoa",
       "color": "#9a7b79",
-      "description": "Encompass a range of delightful tastes. Nutty notes such as peanuts, hazelnut, and almond mingle with the rich, deep flavors of chocolate and dark chocolate, offering a comforting and indulgent experience.",
+      "description": "Nutty and cocoa flavors in coffee encompass a range of delightful tastes. Nutty notes such as peanuts, hazelnut, and almond mingle with the rich, deep flavors of chocolate and dark chocolate, offering a comforting and indulgent experience.",
       "children": [
         {
           "name": "nutty",
           "color": "#b59287",
-          "description": "Bring out the delightful tastes of peanuts, hazelnut, and almond, adding a comforting and slightly nutty undertone to the brew.",
+          "description": "Nutty coffee flavors bring out the delightful tastes of peanuts, hazelnut, and almond, adding a comforting and slightly nutty undertone to the brew.",
           "children": [
             {
               "name": "peanuts",
@@ -135,7 +135,7 @@
         {
           "name": "cocoa",
           "color": "#6B5042",
-          "description": "Encompass the rich, deep flavors of chocolate and dark chocolate, providing an indulgent and satisfying experience.",
+          "description": "Cocoa notes in coffee encompass the rich, deep flavors of chocolate and dark chocolate, providing an indulgent and satisfying experience.",
           "children": [
             {
               "name": "chocolate",
@@ -159,7 +159,7 @@
         {
           "name": "brown sugar",
           "color": "#A27248",
-          "description": "Bring out the sweet and slightly caramelized taste of brown sugar, adding warmth and sweetness to the brew.",
+          "description": "Brown sugar flavors in coffee bring out the sweet and slightly caramelized taste of brown sugar, adding warmth and sweetness to the brew.",
           "children": [
             {
               "name": "molasses",
@@ -208,7 +208,7 @@
     {
       "name": "floral",
       "color": "#E07FCF",
-      "description": "Introduce the delicate and aromatic qualities of black tea, chamomile, rose, and jasmine. These coffees offer a fragrant and soothing experience with hints of floral notes.",
+      "description": "Floral coffee flavors introduce the delicate and aromatic qualities of black tea, chamomile, rose, and jasmine. These coffees offer a fragrant and soothing experience with hints of floral notes.",
       "children": [
         {
           "name": "black tea",
@@ -241,12 +241,12 @@
     {
       "name": "fruity",
       "color": "#EE2D32",
-      "description": "Encompass a spectrum of berry and fruit notes, from the dark and intense blackberry and raspberry to the lighter and sweeter strawberry, blueberry, and citrus fruits. These coffees are vibrant and refreshing.",
+      "description": "Fruity coffee flavors encompass a spectrum of berry and fruit notes, from the dark and intense blackberry and raspberry to the lighter and sweeter strawberry, blueberry, and citrus fruits. These coffees are vibrant and refreshing.",
       "children": [
         {
           "name": "berry",
           "color": "#930F4C",
-          "description": "Features a wide range of dark and intense fruit notes, including blackberry, raspberry, blueberry, and strawberry, creating a vibrant and lively taste experience.",
+          "description": "Berry-flavored coffee features a wide range of dark and intense fruit notes, including blackberry, raspberry, blueberry, and strawberry, creating a vibrant and lively taste experience.",
           "children": [
             {
               "name": "blackberry",
@@ -366,12 +366,12 @@
     {
       "name": "sour/fermented",
       "color": "#FAE14F",
-      "description": "Bring a tangy and lively quality to the brew. Sour aromatics, acetic acid, and other fermentative notes create a unique and sometimes wine-like experience.",
+      "description": "Sour and fermented coffee flavors bring a tangy and lively quality to the brew. Sour aromatics, acetic acid, and other fermentative notes create a unique and sometimes wine-like experience.",
       "children": [
         {
           "name": "sour",
           "color": "#e2d925",
-          "description": "Offer a tangy and lively taste experience, with profiles ranging from sour aromatics to specific acid notes.",
+          "description": "Sour coffee flavors in coffee offer a tangy and lively taste experience, with profiles ranging from sour aromatics to specific acid notes.",
           "children": [
             {
               "name": "sour aromatics",
@@ -408,7 +408,7 @@
         {
           "name": "alcohol/fermented",
           "color": "#b2a113",
-          "description": "Introduce a complex and sometimes wine-like experience to the brew, with notes like winey, whiskey, fermented, and overripe.",
+          "description": "Alcohol and fermented coffee flavors introduce a complex and sometimes wine-like experience to the brew, with notes like winey, whiskey, fermented, and overripe.",
           "children": [
             {
               "name": "winey",
@@ -437,7 +437,7 @@
     {
       "name": "green/vegetative",
       "color": "#1B803D",
-      "description": "Range from the herbal and grassy notes of olive oil, peapod, and fresh greens to hay-like and herb-like qualities. These coffees offer a refreshing and earthy taste.",
+      "description": "Green and vegetative coffee flavors range from the herbal and grassy notes of olive oil, peapod, and fresh greens to hay-like and herb-like qualities. These coffees offer a refreshing and earthy taste.",
       "children": [
         {
           "name": "olive oil",
@@ -452,7 +452,7 @@
         {
           "name": "green/vegetative",
           "color": "#21b252",
-          "description": "Encompass a range of herbal and earthy notes, from under-ripe and peapod-like to fresh and vegetative profiles.",
+          "description": "Green/vegetative coffee flavors encompass a range of herbal and earthy notes, from under-ripe and peapod-like to fresh and vegetative profiles.",
           "children": [
             {
               "name": "under-ripe",
@@ -501,12 +501,12 @@
     {
       "name": "other",
       "color": "#D1CBC4",
-      "description": "Can be quite unique, including chemical notes like bitterness, saltiness, and medicinal qualities. Additionally, there are papery and musty notes, woody undertones, and even animalic or meaty brothy hints.",
+      "description": "Other coffee flavors can be quite unique, including chemical notes like bitterness, saltiness, and medicinal qualities. Additionally, there are papery and musty notes, woody undertones, and even animalic or meaty brothy hints.",
       "children": [
         {
           "name": "chemical",
           "color": "#545C60",
-          "description": "Encompass a range of unique and sometimes unconventional tastes, including bitterness, saltiness, and medicinal qualities.",
+          "description": "Chemical coffee flavors encompass a range of unique and sometimes unconventional tastes, including bitterness, saltiness, and medicinal qualities.",
           "children": [
             {
               "name": "bitter",
@@ -543,7 +543,7 @@
         {
           "name": "papery/musty",
           "color": "#BFBEBC",
-          "description": "Encompass a range of tastes, including stale, cardboard-like, and musty notes.",
+          "description": "Papery/musty coffee flavors encompass a range of tastes, including stale, cardboard-like, and musty notes.",
           "children": [
             {
               "name": "stale",
