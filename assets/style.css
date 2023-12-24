@@ -1,0 +1,37 @@
+html, body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    font-size: 20px;
+}
+
+a {
+    color: inherit;
+}
+
+body {
+    font-family: system-ui;
+    font-weight: 450;
+    font-size: 20px;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale; 
+    line-height: 1.2;
+}
+
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+article {
+    padding: 2rem;
+}
+
+article > p {
+    max-width: 26em;
+}   
+
+@media only screen and (max-width: 767px) {
+    article {
+        padding: 1rem;
+    }
+}
