@@ -1,0 +1,11 @@
+---
+layout: post
+title:  "Bao II, B. 1977"
+date:   2024-04-01 22:42:13 +0200
+categories: work
+index: "4."
+description: 'Bao II, B. 1977, is an Ableton Live instrument with six sawtooth oscillators set to specific frequencies intended for creating resonant A minor suspended 4th chords. In simpler terms, it can described as a musical instrument for making soothing ambient music. <a href="https://darita.gumroad.com/l/bao-ii-b-1977">Download</a> here for free.'
+---
+<div class="images">
+    <div><img src="/assets/images/bao.png" class="thumbnail" /></div>
+</div>
