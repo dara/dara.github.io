@@ -7,5 +7,5 @@ index: "4"
 description: 'An Ableton Live instrument with six sawtooth oscillators set to specific frequencies intended for creating resonant A minor suspended 4th chords. In other words, it is an instrument for making lush ambient drones. <a href="https://darita.gumroad.com/l/bao-ii-b-1977" class="reversed">Download</a> here.'
 ---
 <div class="images">
-    <div><img src="/assets/images/bao/bao-1.png" class="thumbnail" /></div>
+    <div><img src="/assets/images/bao/bao-1.png" width="1984" height="2096" class="thumbnail" /></div>
 </div>

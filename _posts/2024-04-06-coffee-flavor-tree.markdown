@@ -8,13 +8,13 @@ description: "Based on the World Coffee Research's Sensory Lexicon, Coffee Flavo
 ---
 
 <div class="images">
-    <div><img src="/assets/images/coffee-flavor-tree/coffee-flavor-tree-2.png" class="thumbnail" /></div>
-    <div><img src="/assets/images/coffee-flavor-tree/coffee-flavor-tree-3.png" class="thumbnail" /></div>
-    <div><img src="/assets/images/coffee-flavor-tree/coffee-flavor-tree-4.png" class="thumbnail" /></div>
+    <div><img src="/assets/images/coffee-flavor-tree/coffee-flavor-tree-2.png" width="750" height="1334" class="thumbnail" /></div>
+    <div><img src="/assets/images/coffee-flavor-tree/coffee-flavor-tree-3.png" width="750" height="1334" class="thumbnail" /></div>
+    <div><img src="/assets/images/coffee-flavor-tree/coffee-flavor-tree-4.png" width="750" height="1334" class="thumbnail" /></div>
 </div>
 
 <div class="images">
-    <div><img src="/assets/images/coffee-flavor-tree/coffee-flavor-tree-5.png" class="thumbnail" /></div>
-    <div><img src="/assets/images/coffee-flavor-tree/coffee-flavor-tree-6.png" class="thumbnail" /></div>
-    <div><img src="/assets/images/coffee-flavor-tree/coffee-flavor-tree-7.png" class="thumbnail" /></div>
+    <div><img src="/assets/images/coffee-flavor-tree/coffee-flavor-tree-5.png" width="750" height="1334" class="thumbnail" /></div>
+    <div><img src="/assets/images/coffee-flavor-tree/coffee-flavor-tree-6.png" width="750" height="1334" class="thumbnail" /></div>
+    <div><img src="/assets/images/coffee-flavor-tree/coffee-flavor-tree-7.png" width="750" height="1334" class="thumbnail" /></div>
 </div>
