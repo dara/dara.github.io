@@ -3,8 +3,8 @@ layout: post
 title:  "Coffee Flavor Tree"
 date:   2024-04-01 22:42:13 +0200
 categories: work
-index: "2."
-description: "Based on the World Coffee Research's Sensory Lexicon, Coffee Flavor Tree is a web application that enables users to explore various coffee flavors. Users can navigate through a digital aroma tree, discovering a range of coffee flavors and their unique characteristics. <a href='/work/coffee-flavor-tree/app.html'>Explore</a>"
+index: "2"
+description: "Based on the World Coffee Research's Sensory Lexicon, Coffee Flavor Tree is a web application that enables users to explore various coffee flavors. Users can navigate through a digital aroma tree, discovering a range of coffee flavors and their unique characteristics. <a href='/work/coffee-flavor-tree/app.html' class='reversed'>Explore</a>"
 ---
 
 <div class="images">

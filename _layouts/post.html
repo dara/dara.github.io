@@ -8,11 +8,16 @@
     <link rel="stylesheet" href="/assets/css/style.css">
 </head>
 <body class="flex">
+    <nav class="header">
+        <h1 class="title">Dara Kilicoglu</h1>
+        <a href="/">Index</a>
+    </nav>
+    
     <main class="post">
-        <p><a href="/">{{ page.index }}</a></p>
-        <h6 style="margin-bottom: 1rem">{{ page.title }}</h6>
-        <p class="serif lg-text">{{ page.description }}</p>
-
+        <header class="intro">
+            <span class="serif lg-text"><strong>{{page.title}}</strong> <sup>({{page.index}})</sup> — {{ page.description }}</span>
+        </header>
+        
         <div class="content">
             {{ content }}
         </div>
@@ -22,13 +27,13 @@
         {% if page.next.url %}
         <div>
             <div>Prev</div>
-            <a class="next serif lg-text" href="{{page.next.url}}">{{page.next.title}}</a>
+            <a class="next serif lg-text reversed" href="{{page.next.url}}">{{page.next.title}}</a>
         </div>
         {% endif %}
         {% if page.previous.url %}
         <div>
             <div>Next</div>
-            <a class="prev serif lg-text" href="{{page.previous.url}}">{{page.previous.title}}</a>
+            <a class="prev serif lg-text reversed" href="{{page.previous.url}}">{{page.previous.title}}</a>
         </div>
         {% endif %}
     </div>
@@ -37,7 +42,13 @@
         © 2024 Dara Kilicoglu <a href="#" id="back-to-top">Back to top</a>
     </nav>
 
-    <div id="loader-wrapper">Dara Kilicoglu</div>
+    <div id="loader-wrapper">
+        <div class="lds-hourglass">
+            <svg width="40" height="40" viewBox="0 0 126 126" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M88.5999 0.700012H36.7999L0.199951 37.3V89.1L36.7999 125.7H88.5999L125.2 89.1V37.4L88.5999 0.700012ZM62.7999 88.6C48.7999 88.6 37.4999 77.3 37.4999 63.3C37.4999 49.3 48.7999 38 62.7999 38C76.7999 38 88.0999 49.3 88.0999 63.3C88.0999 77.2 76.6999 88.6 62.7999 88.6Z" fill="#E0A0D5"/>
+            </svg>    
+        </div>
+    </div>
 
     <script src="/assets/app.js"></script>
 </body>

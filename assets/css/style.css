@@ -69,7 +69,7 @@ h2 {
 }
 
 .xl-text {
-    font-size: 4.25vw;
+    font-size: 4.5vw;
     max-width: 20em;
 }
 
@@ -104,8 +104,8 @@ a:not(.card)::before {
 
 a:hover::before { transform: scaleX(1); }
 
-p > a:not(.card)::before  { transform: scaleX(1) }
-p > a:not(.card):hover::before { transform: scaleX(0) }
+a.reversed::before  { transform: scaleX(1) }
+a.reversed:hover::before { transform: scaleX(0) }
 
 p {
     margin-top: 0;
@@ -124,11 +124,16 @@ nav {
     display: flex;
     justify-content: space-between;
     align-items: start;
-    height: 30px;
 }
 
-header.home {
-    margin: calc(var(--padding) * 3) 0 calc(var(--padding) * 1.5) 0;
+nav.header {
+    position: sticky;
+    z-index: 2;
+    top: calc(var(--padding) - 7px);
+}
+
+header.intro {
+    margin: calc(var(--padding) * 2) 0;
 }
 
 section.posts {
@@ -156,6 +161,12 @@ section.posts .post {
     max-width: 70%;
 }
 
+section.posts .post .card {
+    display: flex;
+    flex-direction: column;
+    gap: calc(var(--padding) / 2);
+}
+
 section.posts .post.small {
     max-width: 45%;
 }
@@ -173,16 +184,21 @@ section.posts .post.x-small {
 
 span.post-index, span.post-title  {
     display: block;
-    margin: 0.75rem 0;
 }
 
 /* Post */
+
+main.post .content {
+    display: flex;
+    gap: var(--padding);
+    justify-content: space-between;
+    flex-direction: column;
+}
 
 main.post .images {
     display: flex;
     gap: var(--padding);
     justify-content: space-between;
-    margin-bottom: var(--padding);
 }
 
 main.post .images div {
@@ -191,7 +207,10 @@ main.post .images div {
 
 /* Post navigation */
 
-.post-navigation { margin: var(--padding) 0; display: flex; }
+.post-navigation { 
+    margin: calc(var(--padding) * 2) 0;
+    display: flex;
+}
 .post-navigation div { flex: 1; }
 .post-navigation a { margin-top: 0.5rem; }
 
@@ -203,12 +222,55 @@ main.post .images div {
     height: 100%;
     top: 0;
     left: 0;
-    background-color: #E0A0D5;
     display: flex;
     justify-content: center;
     align-items: center;
     z-index: 1000;
+    background: white;
 }
+
+
+.lds-hourglass,
+.lds-hourglass:after {
+  box-sizing: border-box;
+}
+
+.lds-hourglass {
+  display: inline-block;
+  position: relative;
+  width: 80px;
+  height: 80px;
+  animation: lds-hourglass 1.2s infinite;
+}
+
+/* .lds-hourglass:after {
+  content: " ";
+  display: block;
+  border-radius: 50%;
+  width: 0;
+  height: 0;
+  margin: 8px;
+  box-sizing: border-box;
+  border: 32px solid currentColor;
+  border-color: currentColor transparent currentColor transparent;
+  
+} */
+
+@keyframes lds-hourglass {
+  0% {
+    transform: rotate(0);
+    animation-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19);
+  }
+  50% {
+    transform: rotate(900deg);
+    animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+  }
+  100% {
+    transform: rotate(1800deg);
+  }
+}
+
+
 
 /* Responsive */
 
@@ -218,6 +280,14 @@ main.post .images div {
         --lead-line-height: 1.2;
         --thumbnail-radius: 18px;
         --thumbnail-padding: 9px;
+    }
+
+    body {
+        padding: var(--padding)
+    }
+
+    nav.header {
+        top: var(--padding);
     }
 
     .xl-text {
@@ -235,7 +305,8 @@ main.post .images div {
 
     section.posts .row {
         flex-direction: column;
-        margin-bottom: 0;
+        gap: var(--mobile-post-list-gutter);
+        margin-bottom: var(--mobile-post-list-gutter);
     }
 
     section.posts .post,
