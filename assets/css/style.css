@@ -225,6 +225,7 @@ main.post .images div {
     }
 
     body {
+        font-size: 17px;
         padding: var(--padding)
     }
 
@@ -241,10 +242,6 @@ main.post .images div {
         font-size: 25px;
     }
 
-    body {
-        font-size: 17px;
-    }
-
     section.posts .row {
         flex-direction: column;
         gap: var(--mobile-post-list-gutter);
@@ -257,5 +254,8 @@ main.post .images div {
         width: 100%;
         max-width: 100%;
         margin-bottom: var(--mobile-post-list-gutter);
-    }   
+    }
+
+    h1.title > span { display: none; }
+    h1.title::after { content: "Dara K."; }
 }
