@@ -180,6 +180,7 @@ section.posts .post.x-small {
     padding: var(--thumbnail-padding);
     border-radius: var(--thumbnail-radius);
     width: 100%;
+    height: auto;
 }
 
 span.post-index, span.post-title  {

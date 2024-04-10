@@ -7,5 +7,5 @@ index: "7"
 description: "Neol is a platform connecting businesses with a curated community of top creative leaders to tackle critical challenges. I helped design the Neol ID, a profile page for members of this creative community. These profiles allow Neol members to showcase their skills and experience, and connect and collaborate with each other.  Because each Neol member is unique, their Neol ID reflects their individual personality and strengths."
 ---
 <div class="images">
-    <div><img src="/assets/images/neol.png" class="thumbnail" /></div>
+    <div><img src="/assets/images/neol/neol-0.png" class="thumbnail" /></div>
 </div>
