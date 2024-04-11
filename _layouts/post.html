@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dara Kilicoglu — Designer</title>
     <link rel="icon" type="image/png" href="/favicon.png">
-    <link rel="preload" href="/assets/fonts/BricolageGrotesque/BricolageGrotesque-Regular.ttf" as="font" type="font/ttf">
+    <link rel="preload" href="/assets/fonts/OverusedGrotesk-VF.woff2" as="font" type="font/woff2" crossorigin>
     <link rel="stylesheet" href="/assets/css/style.css">
 </head>
 <body>
@@ -16,8 +16,8 @@
     
     <div class="post">
         <div class="description">
-            <div class="lg-text serif">{{ page.title }}</div><br>
-            {{ page.description }}
+            <div class="post-title lg-text">{{ page.title }}</div>
+            <p>{{ page.description }}</p>
         </div>
         
         <div class="content">
@@ -29,13 +29,13 @@
         {% if page.next.url %}
         <div>
             Prev<br />
-            <a class="next reversed md-text serif" href="{{page.next.url}}">{{page.next.title}}</a>
+            <a class="next reversed md-text" href="{{page.next.url}}">{{page.next.title}}</a>
         </div>
         {% endif %}
         {% if page.previous.url %}
         <div>
             Next<br />
-            <a class="prev reversed md-text serif" href="{{page.previous.url}}">{{page.previous.title}}</a>
+            <a class="prev reversed md-text" href="{{page.previous.url}}">{{page.previous.title}}</a>
         </div>
         {% endif %}
     </div>
