@@ -26,22 +26,22 @@
 }
 
 a {
-    font-family: inherit;
-    line-height: inherit;
-    text-decoration: none;
-    color: var(--text-color);
     display: inline-block;
     position: relative;
+    font-family: inherit;
+    line-height: inherit;
+    color: var(--text-color);
+    text-decoration: none;
 }
 
 a:not(.card)::before {
     position: absolute;
     content: '';
     display: block;
-    right: 0.075em;
-    height: 0.09em;
+    right: 0.06em;
+    height: 0.07em;
     bottom: -0.1em;
-    left: 0.05em;
+    left: 0.02em;
     background-color: var(--text-color);
     transform: scaleX(0);
     transform-origin: top left;
