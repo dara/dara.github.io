@@ -1,39 +1,41 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="single">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dara Kilicoglu — Designer</title>
     <link rel="icon" type="image/png" href="/favicon.png">
+    <link rel="preload" href="/assets/fonts/BricolageGrotesque/BricolageGrotesque-Regular.ttf" as="font" type="font/ttf">
     <link rel="stylesheet" href="/assets/css/style.css">
 </head>
 <body>
     <nav class="header">
-        <h1 class="title"><span>Dara Kilicoglu</span></h1>
+        <h1 class="title"><span>{{ page.index }}.</span></h1>
         <a href="/">Index</a>
     </nav>
     
-    <main class="post">
-        <header class="intro">
-            <span class="serif lg-text"><strong>{{page.title}}</strong> <sup>({{page.index}})</sup> — {{ page.description }}</span>
-        </header>
+    <div class="post">
+        <div class="description">
+            <div class="lg-text serif">{{ page.title }}</div><br>
+            {{ page.description }}
+        </div>
         
         <div class="content">
             {{ content }}
         </div>
-    </main>
+    </div>
 
     <div class="post-navigation">
         {% if page.next.url %}
         <div>
-            <div>Prev</div>
-            <a class="next serif lg-text reversed" href="{{page.next.url}}">{{page.next.title}}</a>
+            Prev<br />
+            <a class="next reversed md-text serif" href="{{page.next.url}}">{{page.next.title}}</a>
         </div>
         {% endif %}
         {% if page.previous.url %}
         <div>
-            <div>Next</div>
-            <a class="prev serif lg-text reversed" href="{{page.previous.url}}">{{page.previous.title}}</a>
+            Next<br />
+            <a class="prev reversed md-text serif" href="{{page.previous.url}}">{{page.previous.title}}</a>
         </div>
         {% endif %}
     </div>
