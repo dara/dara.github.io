@@ -120,6 +120,10 @@ nav.header {
     border: 1px solid var(--border-color); 
 }
 
+.thumbnail.radius {
+    border-radius: 8px; 
+}
+
 /* Posts */
 
 h2.hero {

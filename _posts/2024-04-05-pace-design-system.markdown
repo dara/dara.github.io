@@ -7,12 +7,10 @@ index: "3"
 description: "At Veo, I led the creation of Pace, Veo's design system. Pace unifies the design of all Veo's platforms and products. It has two parts: a core design framework that sets the foundation, and optional add-ons that give designers more flexibility. This ensures all Veo products look and feel connected, even across different platforms."
 ---
 <div class="images">
-    <div><img src="/assets/images/pace/pace-0.webp" width="1400" height="1600" class="thumbnail" /></div>
-</div>
-<div class="images">
-    <div><img src="/assets/images/pace/pace-1.png" width="3702" height="7837" class="thumbnail" /></div>
+    <div><img src="/assets/images/pace/pace-0.png" width="1396" height="632" class="thumbnail border radius" /></div>
 </div>
 
 <div class="images">
-    <div><img src="/assets/images/pace/pace-2.png" width="2674" height="8225" class="thumbnail" /></div>
+    <div><img src="/assets/images/pace/pace-1.png" width="1440" height="" class="thumbnail border radius" /></div>
+    <div><img src="/assets/images/pace/pace-2.png" width="1440" height="" class="thumbnail border radius" /></div>
 </div>
