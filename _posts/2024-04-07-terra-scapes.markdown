@@ -19,5 +19,8 @@ description: "I'm drawn into landscapes, cityscapes and soundscapes for reasons 
 <div class="images">
     <div><img src="/assets/images/terra-scapes/terra-scapes-3.jpg" width="2400" height="2999" class="thumbnail" /></div>
 </div>
+<div class="images">
+    <div><img src="/assets/images/terra-scapes/terra-scapes-4.jpg" width="2400" height="1601" class="thumbnail" /></div>
+</div>
 
  
