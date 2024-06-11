@@ -148,7 +148,7 @@ article.post .images {
     :root {
         --padding: 20px;
         --base-font-size: 18px;
-        --image-padding: 0.5rem;
+        --image-padding: 2rem;
     }
     
     nav.header {
@@ -161,10 +161,9 @@ article.post .images {
         line-height: 1.2;
     }
     
-    div.post div.description {
-        margin: 20vw 0 var(--padding) 0;
-        max-width: 100%;
-    } 
+    article.post {
+        margin-bottom: 3rem;
+    }
     
     .lg-text {
         font-size: 39px;
