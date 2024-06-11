@@ -6,6 +6,3 @@ categories: work
 index: "5"
 description: "Born from a weekend project, Templo is a gallery showcasing high-quality Framer and Webflow templates. Designed for future expansion, it has the potential to encompass a wider range of design tools and digital assets. While currently focused on supporting template builders, it lays the groundwork for future marketplace functionality. <a href='https://www.templo.supply' class='reversed'> Visit Templo</a>"
 ---
-<div class="images">
-    <div><img src="/assets/images/templo/templo-0.png" width="2400" height="1656" class="thumbnail" /></div>
-</div>

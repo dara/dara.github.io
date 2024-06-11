@@ -10,12 +10,13 @@
 
 :root {
     --base-font-size: 26px;
-    --large-font-size: 5vw;
+    --large-font-size: 62px;
     --padding: 48px;
     --mobile-post-list-gutter: 24px;
     --text-color: #EEE;
     --background-color: black;
     --border-color: #222;
+    --image-padding: 6rem;
 }
 
 *, *::before, *::after {
@@ -26,31 +27,9 @@
 }
 
 a {
-    display: inline-block;
-    position: relative;
-    font-family: inherit;
-    line-height: inherit;
     color: var(--text-color);
     text-decoration: none;
 }
-
-a:not(.card)::before {
-    position: absolute;
-    content: '';
-    display: block;
-    right: 0.06em;
-    height: 0.07em;
-    bottom: -0.1em;
-    left: 0.02em;
-    background-color: var(--text-color);
-    transform: scaleX(0);
-    transform-origin: top left;
-    transition: transform 0.3s ease;
-}
-
-a:hover::before { transform: scaleX(1); }
-a.reversed::before  { transform: scaleX(1) }
-a.reversed:hover::before { transform: scaleX(0) }
 
 p {
     margin-top: 0;
@@ -59,16 +38,6 @@ p {
 h1, h2 {
     margin: 0;
     font-size: 1em;
-}
-
-.lg-text {
-    font-size: var(--large-font-size);
-    line-height: 1.1;
-}
-
-.md-text {
-    font-size: calc(var(--base-font-size) * 1.3);
-    line-height: 1.1;
 }
 
 ul { 
@@ -82,6 +51,7 @@ ul li {
 html, body {
     margin: 0;
     padding: 0;
+    text-align: center;
 }
 
 html {
@@ -95,123 +65,72 @@ body {
     line-height: 1.4;
     background: var(--background-color);
     color: var(--text-color);
-    padding: calc(var(--padding) - 10px) var(--padding) var(--padding);
 }
 
-body.flex {
-    flex-direction: column;
-    display: flex;
-    height: 100%;
-    justify-content: space-between;
+.wrapper {
+    max-width: 1440px;
+    margin: 0 auto;
+    padding: var(--padding);
 }
 
-nav {
-    display: flex;
-    justify-content: space-between;
-    align-items: start;
-}
-
-nav.header {
+.sticky-title {
+    position: -webkit-sticky; /* for Safari */
     position: sticky;
-    z-index: 2;
-    top: calc(var(--padding) - 10px);
+    top: var(--padding);
+    z-index: 1000;
 }
 
-.thumbnail {
-    border-radius: 8px;
+img {
+    display: block;
+}
+
+article.post figure {
+    margin: 0;
+    border-radius: 1rem;
+    padding: var(--image-padding);
+    border: 1px solid var(--border-color);
+}
+
+article.post figure img {
+    border-radius: 0.5rem;
     width: 100%;
     height: auto;
 }
 
-.thumbnail.border {
-    border: 1px solid var(--border-color); 
-}
-
-.thumbnail.radius {
-    border-radius: 8px; 
+article.post .post-title {
+    margin-bottom: var(--padding);
 }
 
 /* Posts */
 
 h2.hero {
-    margin: 10vw 0;
+    margin: 23vh auto 25vh auto;
     font-size: var(--large-font-size);
     line-height: 1.1;
-    max-width: 16em;
+    text-align: center;
+    max-width: 17em;
 }
 
-div.posts {
-    margin-bottom: calc(var(--padding) * 3);
+article.post {
+    margin-bottom: 8rem;
 }
 
-div.posts .post a { 
-    border: none; /* Remove link underlining for the post list items */ 
-}
-
-div.posts .row {
+article.post .row {
     display: flex;
     flex-direction: row;
-    gap: 10%;
+    gap: 1rem;
     justify-content: space-between;
-    margin-bottom: 5rem;
 }
 
-div.posts .post.right {
-    margin-left: auto;
-}
-
-div.posts .post.full {
-    max-width: 100%;
-}
-
-div.posts .post {
-    width: 100%;
-    max-width: 70%;
-}
-
-div.posts .post .card {
+article.post .images {
     display: flex;
     flex-direction: column;
     gap: calc(var(--padding) / 2);
 }
 
-div.posts .post.small {
-    max-width: 45%;
-}
-
-div.posts .post.x-small {
-    max-width: 33%;
-}
-
-/* Post */
-
-div.post div.description {
-    margin: 10vw 0 5vw 0;
-}
-
-div.post div.description p {
-    max-width: 28em;
-}
-
-div.post div.description .post-title {
-    margin-bottom: 0.5em;
-}
-
-div.post div.content {
-    display: flex;
-    gap: var(--padding);
-    justify-content: space-between;
-    flex-direction: column;
-}
-
-div.post div.images {
-    display: flex;
-    gap: var(--padding);
-    justify-content: space-between;
-}
-
-div.post div.images div {
-    flex: 1;
+.post-index::before {
+    counter-increment: post;
+    content: counter(post) ".";
 }
 
 /* Post navigation */
@@ -229,55 +148,46 @@ div.post div.images div {
     :root {
         --padding: 20px;
         --base-font-size: 18px;
+        --image-padding: 0.5rem;
     }
-
-    body {
-        padding-top: calc(var(--padding) - 3px);
-    }
-
+    
     nav.header {
         top: calc(var(--padding) - 3px);
     }
-
+    
     h2.hero {
-        margin: 20vw 0 calc(var(--padding)*2) 0;
-        font-size: 39px;
+        margin: 15vh auto;
+        font-size: 32px;
         line-height: 1.2;
     }
-
+    
     div.post div.description {
         margin: 20vw 0 var(--padding) 0;
         max-width: 100%;
     } 
-
+    
     .lg-text {
         font-size: 39px;
         max-width: 7.5em;
     }
-
+    
     .md-text {
         font-size: calc(var(--base-font-size) * 1);
     }
-
-    div.posts .row {
-        flex-direction: column;
-        gap: var(--mobile-post-list-gutter);
-        margin-bottom: var(--mobile-post-list-gutter);
+    
+    ul.posts .row {
+        gap: var( --image-padding);
+        margin-bottom: var(--image-padding:);
     }
-
-    div.posts .post,
-    div.posts .post.small,
-    div.posts .post.x-small  {
+    
+    ul.posts .post {
         width: 100%;
         max-width: 100%;
-        margin-bottom: var(--mobile-post-list-gutter);
+        margin-bottom: var(--image-padding);
     }
-
+    
     div.post div.description {
         margin: 20vw 0 calc(var(--padding)*2) 0;
         max-width: 100%;
-    }    
-
-    html:not(.single) h1.title > span { display: none; }
-    html:not(.single) h1.title::after { content: "Dara K."; }
+    }
 }
