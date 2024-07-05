@@ -49,23 +49,6 @@ body {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    cursor: url('data:image/svg+xml,<svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg"><g opacity="0.8"><circle cx="16" cy="16" r="11" fill="black"/></g></svg>') 16 16, auto;
-    cursor: -webkit-image-set(url('data:image/svg+xml,<svg width="64" height="64" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg"><g opacity="0.8"><circle cx="32" cy="32" r="22" fill="black"/></g></svg>') 2x) 16 16, pointer;
-}
-
-.flavor.expanded {
-    cursor: url('data:image/svg+xml,<svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg"><g opacity="0.8"><rect x="1" y="18.4" width="4.8" height="30" transform="rotate(-90 1 18.4)" fill="black"/></g></svg>') 16 16, auto;
-    cursor: -webkit-image-set(url('data:image/svg+xml,<svg width="64" height="64" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg"><g opacity="0.8"><rect x="2" y="36.8" width="9.6" height="60" transform="rotate(-90 2 36.8)" fill="black"/></g></svg>') 2x) 16 16, pointer;
-}
-
-.flavor.darkColor {
-    cursor: url('data:image/svg+xml,<svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg"><circle opacity="0.75" cx="16" cy="16" r="11" fill="white"/></svg>') 16 16, auto;
-    cursor: -webkit-image-set(url('data:image/svg+xml,<svg width="64" height="64" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg"><circle opacity="0.75" cx="32" cy="32" r="22" fill="white"/></svg>') 2x) 16 16, pointer;
-}
-
-.flavor.darkColor.expanded {
-    cursor: url('data:image/svg+xml,<svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg"><rect opacity="0.75" x="1" y="18.4" width="4.8" height="30" transform="rotate(-90 1 18.4)" fill="white"/></svg>') 16 16, auto;
-    cursor: -webkit-image-set(url('data:image/svg+xml,<svg width="64" height="64" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg"><rect opacity="0.75" x="2" y="36.8" width="9.6" height="60" transform="rotate(-90 2 36.8)" fill="white"/></svg>') 2x) 16 16, pointer;
 }
 
 .flavor .label {
