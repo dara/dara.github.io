@@ -14,7 +14,7 @@ body {
     background: black;
     font-family: 'Overused Grotesk', sans-serif;
     font-weight: 450;
-    font-size: 20px;
+    font-size: 18px;
     display: flex;
     flex-direction: row;
     overflow: hidden;
@@ -49,12 +49,30 @@ body {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    cursor: url(cursors/Circle.svg) 16 16, auto;
+    cursor: -webkit-image-set(url('cursors/Circle2x.svg') 2x) 16 16, pointer;
+}
+
+.flavor.expanded {
+    cursor: url(cursors/Minus.svg) 16 16, auto;
+    cursor: -webkit-image-set(url('cursors/Minus2x.svg') 2x) 16 16, pointer;
+}
+
+.flavor.darkColor {
+    cursor: url(cursors/CircleDark.svg) 16 16, auto;
+    cursor: -webkit-image-set(url('cursors/CircleDark2x.svg') 2x) 16 16, pointer;
+}
+
+.flavor.darkColor.expanded {
+    cursor: url(cursors/MinusDark.svg) 16 16, auto;
+    cursor: -webkit-image-set(url('cursors/MinusDark2x.svg') 2x) 16 16, pointer;
 }
 
 .flavor .label {
     display: flex;
-    padding: 20px;
+    padding: 1rem;
     justify-content: space-between;
+    min-height: 44px;
 }
 
 .flavor .label > * {
@@ -62,7 +80,7 @@ body {
 }
 
 .flavor .description {
-    padding: 20px;
+    padding: 1rem;
     display: none;
 }
 
@@ -140,11 +158,11 @@ body > .active > .flavor:not(.expanded) {
 /* Media Queries */
 @media (max-width: 768px) {
     body {
-        font-size: 17px;
+        font-size: 16px;
     }
 
     .flavor .label {
-        padding: 10px;
+        padding: 0.75rem;
         display: flex;
         justify-content: space-between;
     }
@@ -158,8 +176,7 @@ body > .active > .flavor:not(.expanded) {
     }
 
     .flavor .description {
-        padding: 10px;
-        margin-bottom: 10px;
+        padding: 0.75rem;
     }
 
     .flavor-container.active > .flavor.level-0.expanded > .description {

@@ -8,7 +8,7 @@
  * Author: Dara Kilicoglu
  * Copyright: 2023
  * License: MIT
- * Version: 1.1.0
+ * Version: 1.1.1
  * Maintained by: Dara Kilicoglu
  */
 
@@ -45,10 +45,16 @@ document.addEventListener("DOMContentLoaded", async () => {
     }
 
     function createFlavorElement(flavor, index = 0, level = 0) {
-        const textColor = isColorDark(flavor.color) ? 'rgba(255, 255, 255, 0.75)' : 'rgba(0, 0, 0, 0.8)';
         const element = createElementWithClass(`flavor level-${level}`);
         element.style.backgroundColor = flavor.color;
         element.style.animation = `fadeIn 0.6s ease ${index * 0.1}s forwards`;
+
+        if (isColorDark(flavor.color)) {
+            element.classList.add('darkColor');            
+            textColor = 'rgba(255, 255, 255, 0.75)';
+        } else {
+            textColor = 'rgba(0, 0, 0, 0.8)';
+        }
 
         const label = createElementWithClass('label');
         label.style.color = textColor;
