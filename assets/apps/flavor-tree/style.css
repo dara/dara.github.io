@@ -1,0 +1,194 @@
+@font-face {
+    font-family: 'Overused Grotesk';
+    src: url('fonts/OverusedGrotesk-VF.woff2') format('woff2 supports variations');
+    font-weight: 300 900;
+}
+
+html, body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+}
+
+body {
+    background: black;
+    font-family: 'Overused Grotesk', sans-serif;
+    font-weight: 450;
+    font-size: 18px;
+    display: flex;
+    flex-direction: row;
+    overflow: hidden;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    letter-spacing: -0.01em;
+    line-height: 1.2;
+}
+
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+.flavor-container {
+    flex-grow: 1;
+    overflow: auto;
+    transition: flex-basis 0.5s ease;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Flavor Styles */
+.flavor {
+    opacity: 0;
+    flex-grow: 1;
+    transition: flex-grow 0.5s ease;
+    position: relative;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    overflow: hidden;
+    will-change: flex-grow;
+}
+
+.flavor .label {
+    display: flex;
+    padding: 1rem;
+    justify-content: space-between;
+    min-height: 44px;
+}
+
+.flavor .label > * {
+    flex-grow: 0;
+}
+
+.flavor:not(.expanded) > .description {
+    transition: none;
+    opacity: 0;
+}
+
+.flavor .description {
+    padding: 1rem;
+    opacity: 0;
+    position: absolute;
+    bottom: 0;
+    transition: opacity 0.5s ease-out 0.3s;
+}
+
+/* Active Flavor Container Styles */
+.flavor-container.active > .flavor {
+    flex-grow: 0;
+}
+
+body > .active > .flavor:not(.expanded) {
+    display: none;
+}
+
+.flavor-container.active > .flavor.expanded {
+    flex-grow: 1;
+}
+
+.flavor-container.active > .flavor.level-0 > .label {
+    width: 50%;
+}
+
+.flavor-container.active > .flavor.level-1 > .label {
+    width: 100%;
+}
+
+.flavor-container.active > .flavor.level-1.expanded > .label {
+    width: 50%;
+}
+
+.flavor-container.active > .flavor.level-2 > .label {
+    width: 100%;
+}
+
+.flavor .description {
+    max-width: 24em;
+}
+
+.flavor-container.active > .flavor.level-0.expanded > .description {
+    width: 25%;
+}
+
+.flavor-container.active > .flavor.level-1.expanded > .description {
+    width: 50%;
+}
+
+.flavor-container.active > .flavor.level-2.expanded > .description {
+    width: 100%;
+}
+
+.flavor-container.active > .flavor.expanded > .description {
+    opacity: 1;
+}
+
+/* Nested Flavor Container Styles */
+.flavor > .flavor-container {
+    top: 0;
+    left: 50%;
+    right: 0;
+    height: 100%;
+    position: absolute;
+    display: none;
+    flex-direction: column;
+    flex-grow: 1;
+}
+
+.flavor.expanded > .flavor-container {
+    display: flex;
+}
+
+/* Animation */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+/* Media Queries */
+@media (max-width: 768px) {
+    body {
+        font-size: 16px;
+    }
+
+    .flavor .label {
+        padding: 0.75rem;
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .flavor-container.active > .flavor.expanded > .label {
+        width: 100%;
+    }
+
+    .flavor-container.active > .flavor.level-1.expanded.expanded > .label {
+        width: 50%;
+    }
+
+    .flavor .description {
+        padding: 0.75rem;
+    }
+
+    .flavor-container.active > .flavor.level-0.expanded > .description {
+        display: none;
+    }
+
+    .flavor-container.active > .flavor.level-1.expanded > .description {
+        width: 50%;
+    }
+
+    .flavor-container.active > .flavor.level-2.expanded > .description {
+        width: 100%;
+    }
+
+    .flavor.level-0 > .flavor-container {
+        position: relative;
+        left: 0;
+        width: auto;
+        height: auto;
+        padding: 0 0 0 10px;
+    }
+}

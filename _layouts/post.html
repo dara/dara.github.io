@@ -1,0 +1,27 @@
+---
+layout: default
+---
+
+<div class="max-w-2xl">
+    <div class="mb-8">
+        {% include breadcrump.html parent_title="Posts" parent_url="/posts" current=page.title %}
+    </div>
+
+    <article class="max-w-3xl">
+        <header class="mb-8">
+            <h1 class="title-2">{{ page.title }}</h1>
+            <time datetime="{{ page.date | date: '%Y-%m-%d' }}" class="block mt-1 text-[17px]">
+                {{ page.date | date: "%B %d, %Y" }}
+            </time>
+        </header>
+
+        <div class="prose prose-invert prose-primary">
+            <img src="{{ page.image | relative_url }}" alt="{{ page.title }}" class="w-full h-full object-cover mb-8">
+            {{ content }}
+        </div>
+    </article>
+
+    <div class="mt-8 text-[17px]">
+        Filed under: {{ page.tags | join: ", " }}
+    </div>
+</div>
