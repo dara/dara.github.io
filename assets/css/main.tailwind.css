@@ -10,7 +10,7 @@
 
 @layer components {
   nav a {
-    @apply text-neutral-400 border-none;
+    @apply text-neutral-400;
   }
   nav a.current {
     @apply border-fuchsia-400/80;
