@@ -11,10 +11,6 @@ module.exports = {
       fontFamily: {
         'ibm': ['"IBM Plex Sans"', 'sans-serif'],
       },
-      fontSize: {
-        base: '20px',
-        sm: '17px',
-      },
       transitionDuration: {
         'default': '300ms'
       }
