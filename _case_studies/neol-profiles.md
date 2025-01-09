@@ -13,7 +13,7 @@ role: Product Designer
 ---
 
 <div class="text-block">
-    <h1 class="title-3 mb-2">Uniting creatives and businesses</h1>
+    <h1 class="title-1 mb-2">Uniting creatives and businesses</h1>
     <p>Neol is an innovative hub where companies can find and collaborate with talented professionals from various creative fields, facilitating projects that require unique and tailored solutions. I helped design the platform, focusing on creating impactful member profiles that highlight the exceptional abilities of the creative leaders.</p>
 </div>
 

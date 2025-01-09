@@ -49,8 +49,7 @@
 
   /* Layout components */
   .text-block {
-    @apply max-w-3xl mx-auto;
-    @apply my-48;
+    @apply max-w-3xl mx-auto my-16 md:my-48;
   }
 
   .project-image {
@@ -62,7 +61,7 @@
   }
 
   .project-dual-image-container {
-    @apply grid grid-cols-2 gap-8;
+    @apply grid grid-cols-2 gap-0.5 md:gap-8;
   }
 
   .project-dual-image-container .image-wrapper {
