@@ -1,6 +1,9 @@
 @tailwind base;
 
-@layer base {  
+@layer base {
+  * {
+    line-height: 1.5;
+  }
   p {
     @apply mb-6 last:mb-0;
   }
@@ -10,7 +13,9 @@
 
 @layer components {
   nav a {
-    @apply text-neutral-400;
+    @apply text-neutral-400 text-link;
+    display: inline-block;
+    line-height: 150% !important;
   }
   nav a.current {
     @apply border-fuchsia-400/80;
