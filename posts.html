@@ -28,8 +28,8 @@ title: Posts
                                 <a href="{{ post.url }}">{{ post.title }}</a>
                             </h2>
                             <p class="hidden md:block text-primary mb-0 truncate max-w-xl">{{ post.description }}</p>
-                            <time datetime="{{ post.date | date: '%Y-%m-%d' }}" class="text-neutral-500 text-sm inline-block">
-                                {{ post.date | date: "%B %-d, %Y" }}
+                            <time datetime="{{ post.date | date: '%Y-%m-%d' }}" class="text-neutral-500 font-mono text-[14px] inline-block uppercase">
+                                {{ post.date | date: "%B %Y" }}
                             </time>
                         </div>  
                     </div>

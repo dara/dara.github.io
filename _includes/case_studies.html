@@ -4,11 +4,11 @@
         <article>
             {% if case_study.image %}
                 <a href="{{ case_study.url }}" class="block aspect-video overflow-hidden mb-4 md:mb-6">
-                    <img src="{{ case_study.image }}" alt="{{ case_study.title }}" class="w-full h-full object-cover">
+                    <img src="{{ case_study.image }}" alt="{{ case_study.title }}" class="w-full h-full rounded-sm object-cover">
                 </a>
             {% endif %}
-            <h2 class="font-medium">
-                <a href="{{ case_study.url }}" class="text-link">{{ case_study.title }}</a>
+            <h2 class="uppercase text-sm font-mono">
+                <a href="{{ case_study.url }}">{{ case_study.title }}</a>
             </h2>
             {% if case_study.description %}
                 <p class="text-primary/60">{{ case_study.description }}</p>

@@ -1,7 +1,9 @@
-<a href="/" class="text-link">Home</a>
-<span class="px-0.5">›</span>
-{% if include.parent_title and include.parent_url %}
-<a href="{{ include.parent_url }}" class="text-link">{{ include.parent_title }}</a>
-<span class="px-2">›</span>
-{% endif %}
-{{ include.current }}
+<div class="flex items-center">
+    <a href="/" class="text-link">Home</a>
+    <span class="px-1.5">›</span>
+    {% if include.parent_title and include.parent_url %}
+    <a href="{{ include.parent_url }}" class="text-link">{{ include.parent_title }}</a>
+    <span class="px-1.5">›</span>
+    {% endif %}
+    <span class="truncate inline-block max-w-[500px] border-b-2 border-transparent">{{ include.current }}</span>
+</div>
