@@ -1078,14 +1078,6 @@ h1, h2, h3, h4, h5, h6, a {
     position: static;
   }
 
-  .md\:relative {
-    position: relative;
-  }
-
-  .md\:top-0 {
-    top: 0px;
-  }
-
   .md\:top-auto {
     top: auto;
   }
