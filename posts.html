@@ -7,13 +7,13 @@ title: Posts
     {% include breadcrump.html current="Posts" %}
 
     <div>
-        <h1 class="title-1 pb-8">Posts</h1>
+        <h1 class="title-1 pb-4 md:pb-8">Posts</h1>
 
-        <div class="space-y-12">
+        <div class="space-y-4 md:space-y-12">
         {% for post in site.posts %}
             <article class="group">
-                <div class="flex gap-8">
-                    <div class="w-32 h-32 shrink-0">
+                <div class="flex gap-4 md:gap-8">
+                    <div class="size-20 md:size-32 shrink-0">
                         {% if post.image %}
                             <a href="{{ post.url }}">
                                 <img src="{{ post.image | relative_url }}" alt="{{ post.title }}" class="w-full h-full object-cover">
@@ -22,14 +22,16 @@ title: Posts
                             <div class="w-full h-full bg-neutral-900"></div>
                         {% endif %}
                     </div>
-                    <div>
-                        <h2 class="font-medium" >
-                            <a href="{{ post.url }}" class="text-link">{{ post.title }}</a>
-                        </h2>
-                        <p class="text-primary mb-1">{{ post.description }}</p>
-                        <time datetime="{{ post.date | date: '%Y-%m-%d' }}" class="text-primary/50 text-sm block">
-                            {{ post.date | date: "%b %-d, %Y" }}
-                        </time>
+                    <div class="flex items-center">
+                        <div>
+                            <h2 class="font-medium">
+                                <a href="{{ post.url }}">{{ post.title }}</a>
+                            </h2>
+                            <p class="hidden md:block text-primary mb-0 truncate max-w-xl">{{ post.description }}</p>
+                            <time datetime="{{ post.date | date: '%Y-%m-%d' }}" class="text-neutral-500 text-sm inline-block">
+                                {{ post.date | date: "%B %-d, %Y" }}
+                            </time>
+                        </div>  
                     </div>
                 </div>
             </article>
