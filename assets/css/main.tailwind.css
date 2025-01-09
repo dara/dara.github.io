@@ -30,9 +30,9 @@
   }
 
   .title-1 {
-    @apply text-[30px] md:text-[38px];
-    max-width: 19em;
-    line-height: 1.3;
+    @apply text-[26px] md:text-[38px];
+    @apply max-w-[12em] md:max-w-[17em];
+    line-height: 1.25;
   }
 
   .title-2 {
