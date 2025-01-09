@@ -2,7 +2,7 @@
 layout: default
 ---
 
-<header class="flex items-center mb-12 text-white justify-between">
+<header class="flex items-center mb-12 text-white justify-between relative">
     <h1 class="border-b-2 border-transparent">Dara Kilicoglu</h1>
     
     <button id="mobile-menu-button" class="md:hidden" aria-label="Menu">
@@ -11,8 +11,8 @@ layout: default
         </svg>
     </button>
 
-    <nav id="nav-menu" class="hidden md:block fixed md:relative top-[88px] md:top-0 inset-x-0 bottom-0 bg-neutral-950 md:bg-transparent md:p-0">
-        <div class="flex flex-col md:flex-row gap-3 md:gap-0 h-full items-start md:items-center justify-start pt-8 md:justify-center px-4 md:px-0">
+    <nav id="nav-menu" class="hidden md:block fixed md:static top-[88px] md:top-auto inset-x-0 bottom-0 bg-neutral-950 md:bg-transparent md:p-0">
+        <div class="flex flex-col md:flex-row gap-3 md:gap-0 h-full md:h-auto items-start md:items-center justify-start pt-8 md:pt-0 md:justify-center px-4 md:px-0">
             <a href="/posts" class="text-link text-3xl md:text-base {% if page.url == '/posts' %}current{% endif %}">Posts</a><span class="hidden md:inline px-1">,</span>
             <a href="/pair-with-dara" class="text-link text-3xl md:text-base {% if page.url == '/pair-with-dara' %}current{% endif %}">Pair with Dara</a><span class="hidden md:inline px-1">,</span>
             <a href="/about" class="text-link text-3xl md:text-base {% if page.url == '/about' %}current{% endif %}">About</a>
