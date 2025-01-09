@@ -1,0 +1,26 @@
+<header class="flex items-center justify-between relative">
+    <h1 class="border-b-2 border-transparent">Dara Kilicoglu</h1>
+    
+    <button id="mobile-menu-button" class="md:hidden" aria-label="Menu">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M1 7h22M1 16h22" />
+        </svg>
+    </button>
+
+    <nav id="nav-menu" class="hidden md:block fixed md:static top-[64px] md:top-auto inset-x-0 bottom-0 bg-neutral-950 md:bg-transparent md:p-0">
+        <div class="flex flex-col md:flex-row gap-2 md:gap-0 h-full md:h-auto items-start md:items-center justify-start pt-8 md:pt-0 md:justify-center px-5 md:px-0">
+            <a href="/posts" class="text-2xl md:text-base">Posts</a><span class="hidden md:inline px-1">,</span>
+            <a href="/pair-with-dara" class="text-2xl md:text-base">Pair with Dara</a><span class="hidden md:inline px-1">,</span>
+            <a href="/about" class="text-2xl md:text-base">About</a>
+        </div>
+    </nav>
+</header>
+
+<script>
+    document.getElementById('mobile-menu-button').addEventListener('click', function() {
+        const menu = document.getElementById('nav-menu');
+        const body = document.body;
+        menu.classList.toggle('hidden');
+        body.style.overflow = menu.classList.contains('hidden') ? 'auto' : 'hidden';
+    });
+</script>
