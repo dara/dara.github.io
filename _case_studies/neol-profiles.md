@@ -4,6 +4,12 @@ title: "Neol Profiles"
 description: "Uniting creatives and businesses"
 image: "/assets/images/case-studies/neol-profiles/neol-cover.png"
 order: 1
+team:
+  - Asli Sevinc
+  - Chris Direduryan
+  - Kerem Alper
+  - Dara Kilicoglu
+role: Product Designer
 ---
 
 <div class="text-block">
@@ -80,20 +86,4 @@ order: 1
     <p>Currently, profiles showcase individual achievements. In the future, Neol could explore ways to visually represent collaborations on projects. Perhaps a "face pile" or a similar element could be implemented to highlight teamwork and connections.</p>
 </div>
 
-<div class="text-block">
-    <div class="grid grid-cols-2 gap-8 text-sm">
-        <div>
-            <h6 class="mb-2">Team</h6>
-            <ul>
-                <li>Asli Sevinc</li>
-                <li>Chris Direduryan</li>
-                <li>Kerem Alper</li>
-                <li>Dara Kilicoglu</li>
-            </ul>
-        </div>
-        <div>
-            <h6>Role</h6>
-            <p>Product Designer</p>
-        </div>
-    </div>
-</div>
+{% include team_section.html %}

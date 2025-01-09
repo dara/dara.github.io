@@ -4,6 +4,12 @@ title: "Donkey Republic"
 description: "Mobility design: Unlocking bike sharing"
 image: "/assets/images/case-studies/donkey-republic/donkey-republic-cover.jpg"
 order: 3
+team:
+  - Erdem Ovacik
+  - Jens Frandsen
+  - Rune Kokholm
+  - Dara Kilicoglu
+role: Product Designer
 ---
 
 <div class="text-block">
@@ -84,7 +90,9 @@ order: 3
     <p>The app should make finding bikes easy by utilizing a map view that allows users to locate available bikes through zooming and panning. It should also offer a reservation system to hold bikes for a limited time, ensuring some level of ride predictability while maintaining bike availability. Additionally, the app should streamline the unlocking process with a user-friendly in-app button, eliminating the need for external tools or codes.</p>
 </div>
 
-<img src="{{ 'assets/images/case-studies/donkey-republic/donkey-republic-case-views.jpg' | relative_url }}" alt="Finding, Reserving and Unlocking. See nearby bikes on a map (left), select and confirm your reservation (center) and unlock (right)." class="project-image mt-10">
+<div class="image-wrapper">
+    <img src="{{ 'assets/images/case-studies/donkey-republic/donkey-republic-case-views.jpg' | relative_url }}" alt="Finding, Reserving and Unlocking. See nearby bikes on a map (left), select and confirm your reservation (center) and unlock (right)." class="project-image mt-10">
+</div>
 <div class="project-caption">↳ Finding, Reserving and Unlocking. See nearby bikes on a map (left), select and confirm your reservation (center) and unlock (right).</div>
 
 <div class="text-block">
@@ -133,20 +141,4 @@ order: 3
     <p>The Donkey Republic mobile app demonstrates a user-centered design approach that prioritizes ease of use and a seamless rental experience. By adapting to user data and business needs, the app continues to evolve to offer a convenient and reliable bike-sharing service. This case study highlights the importance of iterative design and the ability to adapt to changing circumstances to optimize the user experience.</p>
 </div>
 
-<div class="text-block">
-    <div class="grid grid-cols-2 gap-8 text-sm mt-16">
-        <div>
-            <h6 class="mb-2">Team</h6>
-            <ul>
-                <li>Erdem Ovacik</li>
-                <li>Jens Frandsen</li>
-                <li>Rune Kokholm</li>
-                <li>Dara Kilicoglu</li>
-            </ul>
-        </div>
-        <div>
-            <h6>Role</h6>
-            <p>Product Designer</p>
-        </div>
-    </div>
-</div>
+{% include team_section.html %}

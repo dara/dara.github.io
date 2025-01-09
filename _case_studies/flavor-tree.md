@@ -4,6 +4,9 @@ title: "Flavor Tree"
 description: "Exploring coffee flavor structures"
 image: "/assets/images/case-studies/flavor-tree/flavor-tree-cover.png"
 order: 4
+team:
+  - Dara Kilicoglu
+role: Product Designer & Developer
 ---
 
 <div class="text-block">
@@ -75,18 +78,4 @@ order: 4
     <p>Flavor Tree successfully translates the rich vocabulary of coffee flavors into an accessible and interactive mobile experience. It empowers coffee enthusiasts of all levels to explore the nuances of coffee taste and elevate their coffee appreciation journey.</p>
 </div>
 
-<div class="text-block">
-    <div class="grid grid-cols-2 gap-8 text-sm mt-16">
-        <div>
-            <h6 class="mb-2">Team</h6>
-            <ul>
-                <li>Dara Kilicoglu</li>
-            </ul>
-        </div>
-        <div>
-            <h6>Role</h6>
-            <p>Product Designer & Developer</p>
-        </div>
-    </div>
-</div>
-
+{% include team_section.html %}

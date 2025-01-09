@@ -4,6 +4,11 @@ title: "Easisure"
 description: "Demystifying insurance"
 image: "/assets/images/case-studies/easisure/easisure-cover.jpg"
 order: 5
+team:
+  - Jeppe Klausen
+  - Esben Toftdahl Nielsen
+  - Dara Kilicoglu
+role: Product Designer
 ---
 
 <div class="text-block">
@@ -78,19 +83,4 @@ order: 5
     <p>With its smart recommendations, tailored deals, and effortless management features it ensures users get the right insurance coverage at competitive prices, all within a user-friendly mobile app.</p>
 </div>
 
-<div class="text-block">
-    <div class="grid grid-cols-2 gap-8 text-sm">
-        <div>
-            <h6 class="mb-2">Team</h6>
-            <ul>
-                <li>Jeppe Klausen</li>
-                <li>Esben Toftdahl Nielsen</li>
-                <li>Dara Kilicoglu</li>
-            </ul>
-        </div>
-        <div>
-            <h6>Role</h6>
-            <p>Product Designer</p>
-        </div>
-    </div>
-</div>
+{% include team_section.html %}
