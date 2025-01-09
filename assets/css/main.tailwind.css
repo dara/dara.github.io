@@ -4,43 +4,41 @@
   p {
     @apply mb-6 last:mb-0;
   }
+
+  a {
+    @apply hover:text-white transition-colors duration-default;
+  }
 }
 
 @tailwind components;
 
 @layer components {
   nav a {
-    @apply text-neutral-400 text-link;
+    @apply text-link;
     display: inline-block;
-    line-height: 150% !important;
-  }
-  nav a.current {
-    @apply border-fuchsia-400/80;
-    @apply text-white;
   }
 
   .text-link {
-    @apply border-b border-neutral-700 inline-block border-b-[1.5px] transition-colors duration-default;
-    @apply hover:border-neutral-500 hover:text-white;
-    display: inline-block;
+    @apply border-b border-neutral-700 inline-block border-b-[1.5px];
+    @apply hover:border-neutral-500;
     box-decoration-break: clone;
     -webkit-box-decoration-break: clone;
   }
 
   .title-1 {
-    @apply text-[22px] md:text-[44px];
+    @apply text-[23px] md:text-[44px];
     max-width: 20em;
     line-height: 1.3;
   }
 
   .title-2 {
-    @apply text-[24px] md:text-[32px];
+    @apply text-[21px] md:text-[32px];
     max-width: 20em;
     line-height: 1.4;
   }
 
   .title-3 {
-    @apply text-[22px] md:text-[28px];
+    @apply text-[21px] md:text-[28px];
     max-width: 24em;
     line-height: 1.4;
   }
@@ -56,7 +54,7 @@
   }
 
   .project-caption {
-    @apply text-neutral-400 mt-3 text-sm;
+    @apply mt-3 text-sm;
   }
 
   .project-dual-image-container {
@@ -78,10 +76,6 @@
   .project-iframe-container iframe {
     @apply absolute inset-0 w-full h-full border-0;
   }
-
-  h1, h2, h3, h4, h5, h6, a, nav a {
-    @apply text-neutral-200;
-  }
 }
 
 @tailwind utilities;
@@ -98,7 +92,7 @@
       font-size: 20px;
     }
     .text-sm {
-      font-size: 17px;
+      font-size: 15px;
     }
   }
 } 
