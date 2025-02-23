@@ -983,6 +983,11 @@ p:last-child {
   border-color: transparent;
 }
 
+.bg-\[\#121212\] {
+  --tw-bg-opacity: 1;
+  background-color: rgb(18 18 18 / var(--tw-bg-opacity, 1));
+}
+
 .bg-neutral-900 {
   --tw-bg-opacity: 1;
   background-color: rgb(23 23 23 / var(--tw-bg-opacity, 1));
@@ -1011,8 +1016,8 @@ p:last-child {
   padding: 1rem;
 }
 
-.p-8 {
-  padding: 2rem;
+.p-6 {
+  padding: 1.5rem;
 }
 
 .px-1 {
@@ -1025,8 +1030,17 @@ p:last-child {
   padding-right: 2rem;
 }
 
+.px-6 {
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+}
+
 .pb-10 {
   padding-bottom: 2.5rem;
+}
+
+.pb-12 {
+  padding-bottom: 3rem;
 }
 
 .pt-3 {
@@ -1160,6 +1174,10 @@ p:last-child {
     display: none;
   }
 
+  .md\:h-\[72vh\] {
+    height: 72vh;
+  }
+
   .md\:h-\[77vh\] {
     height: 77vh;
   }
@@ -1214,8 +1232,8 @@ p:last-child {
     padding: 2.5rem;
   }
 
-  .md\:p-16 {
-    padding: 4rem;
+  .md\:p-12 {
+    padding: 3rem;
   }
 
   .md\:px-0 {
@@ -1227,11 +1245,15 @@ p:last-child {
     padding-bottom: 4rem;
   }
 
+  .md\:pb-24 {
+    padding-bottom: 6rem;
+  }
+
   .md\:pt-0 {
     padding-top: 0px;
   }
 
-  .md\:pt-\[56px\] {
-    padding-top: 56px;
+  .md\:pt-\[40px\] {
+    padding-top: 40px;
   }
 } 
