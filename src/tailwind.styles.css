@@ -1,0 +1,45 @@
+@import "tailwindcss";
+
+@layer base {
+    img, video {
+        max-width: none;
+        height: auto;
+    }
+}
+
+@layer utilities {
+    .no-scrollbar::-webkit-scrollbar {
+        display: none;
+    }
+    
+    .no-scrollbar {
+        -ms-overflow-style: none;
+        scrollbar-width: none;
+    }
+}
+
+@layer components {
+    .work-container {
+        @apply p-9 md:p-16 border-b border-neutral-800;
+    }
+
+    .work-scroll {
+        @apply pb-10 md:pb-16 overflow-x-scroll;
+    }
+    
+    .work-row {
+        @apply flex space-x-8 md:space-x-16 h-64 md:h-128;
+    }
+
+    .work-image {
+        @apply h-auto;
+    }
+
+    .work-image-wide {
+        @apply aspect-[1512/982] object-cover;
+    }
+}
+
+a {
+    text-decoration: underline;
+}
