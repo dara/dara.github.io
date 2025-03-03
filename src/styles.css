@@ -7,16 +7,15 @@
     --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono",
       "Courier New", monospace;
     --color-red-500: oklch(0.637 0.237 25.331);
-    --color-neutral-50: oklch(0.985 0 0);
     --color-neutral-200: oklch(0.922 0 0);
     --color-neutral-400: oklch(0.708 0 0);
-    --color-neutral-600: oklch(0.439 0 0);
     --color-neutral-800: oklch(0.269 0 0);
-    --color-neutral-900: oklch(0.205 0 0);
     --color-neutral-950: oklch(0.145 0 0);
     --spacing: 0.25rem;
     --container-sm: 24rem;
     --container-md: 28rem;
+    --text-2xl: 1.5rem;
+    --text-2xl--line-height: calc(2 / 1.5);
     --font-weight-semibold: 600;
     --ease-in: cubic-bezier(0.4, 0, 1, 1);
     --ease-out: cubic-bezier(0, 0, 0.2, 1);
@@ -1091,9 +1090,6 @@
   .bg-\[var\(--my_variable\)\] {
     background-color: var(--my_variable);
   }
-  .bg-neutral-50 {
-    background-color: var(--color-neutral-50);
-  }
   .bg-neutral-950 {
     background-color: var(--color-neutral-950);
   }
@@ -1406,12 +1402,6 @@
   }
   .text-neutral-400 {
     color: var(--color-neutral-400);
-  }
-  .text-neutral-600 {
-    color: var(--color-neutral-600);
-  }
-  .text-neutral-900 {
-    color: var(--color-neutral-900);
   }
   .capitalize {
     text-transform: capitalize;
@@ -1881,21 +1871,6 @@
       padding-bottom: calc(var(--spacing) * 0);
     }
   }
-  .dark\:bg-neutral-950 {
-    @media (prefers-color-scheme: dark) {
-      background-color: var(--color-neutral-950);
-    }
-  }
-  .dark\:text-neutral-200 {
-    @media (prefers-color-scheme: dark) {
-      color: var(--color-neutral-200);
-    }
-  }
-  .dark\:text-neutral-400 {
-    @media (prefers-color-scheme: dark) {
-      color: var(--color-neutral-400);
-    }
-  }
 }
 @layer base {
   img, video {
@@ -1913,6 +1888,52 @@
   }
 }
 @layer components {
+  #loading-screen {
+    position: fixed;
+    top: calc(var(--spacing) * 0);
+    left: calc(var(--spacing) * 0);
+    z-index: 50;
+    display: flex;
+    height: 100vh;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--color-neutral-950);
+    transition: opacity 0.8s var(--ease-out);
+  }
+  .loader-content {
+    text-align: center;
+    animation: fadeInUp 1.2s var(--ease-out) forwards;
+  }
+  .loader-content h1 {
+    font-size: var(--text-2xl);
+    line-height: var(--tw-leading, var(--text-2xl--line-height));
+    --tw-font-weight: var(--font-weight-semibold);
+    font-weight: var(--font-weight-semibold);
+    color: var(--color-neutral-200);
+    opacity: 0.9;
+  }
+  @keyframes fadeInUp {
+    0% {
+      opacity: 0;
+      transform: translateY(30px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  #loading-screen.hidden {
+    pointer-events: none;
+    opacity: 0%;
+  }
+  .fade-in {
+    opacity: 0%;
+    transition: opacity 0.8s var(--ease-in);
+  }
+  .fade-in.visible {
+    opacity: 100%;
+  }
   .work-container {
     border-bottom-style: var(--tw-border-style);
     border-bottom-width: 1px;

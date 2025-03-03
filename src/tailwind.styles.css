@@ -19,6 +19,45 @@
 }
 
 @layer components {
+    #loading-screen {
+        @apply fixed top-0 left-0 w-full h-screen bg-neutral-950 flex justify-center items-center z-50;
+        transition: opacity 0.8s var(--ease-out);
+    }
+
+    .loader-content {
+        @apply text-center;
+        animation: fadeInUp 1.2s var(--ease-out) forwards;
+    }
+
+    .loader-content h1 {
+        @apply text-neutral-200 font-semibold text-2xl;
+        opacity: 0.9;
+    }
+
+    @keyframes fadeInUp {
+        0% {
+            opacity: 0;
+            transform: translateY(30px);
+        }
+        100% {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+
+    #loading-screen.hidden {
+        @apply opacity-0 pointer-events-none;
+    }
+
+    .fade-in {
+        @apply opacity-0;
+        transition: opacity 0.8s var(--ease-in);
+    }
+
+    .fade-in.visible {
+        @apply opacity-100;
+    }
+
     .work-container {
         @apply p-9 md:p-16 border-b border-neutral-800;
     }
