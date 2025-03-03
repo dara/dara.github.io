@@ -30,7 +30,7 @@
     }
 
     .loader-content h1 {
-        @apply text-neutral-200 font-semibold text-2xl;
+        @apply text-neutral-200 font-medium text-2xl;
         opacity: 0.9;
     }
 
