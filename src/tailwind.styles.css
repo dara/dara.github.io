@@ -77,6 +77,10 @@
     .work-image-wide {
         @apply aspect-[1512/982] object-cover;
     }
+
+    .work-description {
+        @apply pr-9 md:pr-0;
+    }
 }
 
 a {

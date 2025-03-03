@@ -380,6 +380,12 @@
     aspect-ratio: 1512/982;
     object-fit: cover;
   }
+  .work-description {
+    padding-right: calc(var(--spacing) * 9);
+    @media (width >= 48rem) {
+      padding-right: calc(var(--spacing) * 0);
+    }
+  }
 }
 a {
   text-decoration: underline;
