@@ -59,7 +59,7 @@
     }
 
     .work-container {
-        @apply p-9 md:p-16 border-b border-neutral-800;
+        @apply p-9 pr-0 md:p-16 border-b border-neutral-800;
     }
 
     .work-scroll {
@@ -67,11 +67,11 @@
     }
     
     .work-row {
-        @apply flex space-x-8 md:space-x-16 h-64 md:h-128;
+        @apply flex space-x-4 md:space-x-16 h-48 md:h-128;
     }
 
     .work-image {
-        @apply h-auto;
+        @apply h-auto
     }
 
     .work-image-wide {
