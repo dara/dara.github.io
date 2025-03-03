@@ -5,6 +5,11 @@
         max-width: none;
         height: auto;
     }
+    
+    /* Add fix for mobile viewport height calculation */
+    html, body {
+        height: 100%;
+    }
 }
 
 @layer utilities {
@@ -20,7 +25,20 @@
 
 @layer components {
     #loading-screen {
-        @apply fixed top-0 left-0 w-full h-screen bg-neutral-950 flex justify-center items-center z-50;
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        width: 100%;
+        /* Use the custom --vh variable for more accurate height on mobile */
+        height: 100vh; /* Fallback */
+        height: calc(var(--vh, 1vh) * 100); /* Better for mobile browsers, especially Safari */
+        z-index: 50;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: var(--color-neutral-950);
         transition: opacity 0.8s var(--ease-out);
     }
 
@@ -30,7 +48,7 @@
     }
 
     .loader-content h1 {
-        @apply text-neutral-200 font-medium text-2xl;
+        @apply text-neutral-200 font-medium text-xl md:text-2xl;
         opacity: 0.9;
     }
 
@@ -67,7 +85,7 @@
     }
     
     .work-row {
-        @apply flex space-x-4 md:space-x-16 h-48 md:h-128;
+        @apply flex space-x-6 md:space-x-16 h-48 md:h-128;
     }
 
     .work-image {

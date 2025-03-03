@@ -2,6 +2,23 @@ document.addEventListener('DOMContentLoaded', function() {
     const fadeElement = document.querySelector('.fade-in');
     const loadingScreen = document.getElementById('loading-screen');
     
+    // Fix for mobile viewport height calculation, especially for Safari
+    function setVHVariable() {
+        // First we get the viewport height and we multiply it by 1% to get a value for a vh unit
+        let vh = window.innerHeight * 0.01;
+        // Then we set the value in the --vh custom property to the root of the document
+        document.documentElement.style.setProperty('--vh', `${vh}px`);
+    }
+    
+    // Set the --vh variable on initial load
+    setVHVariable();
+    
+    // Update the --vh variable on window resize
+    window.addEventListener('resize', setVHVariable);
+    
+    // Update the --vh variable on orientation change
+    window.addEventListener('orientationchange', setVHVariable);
+    
     // Function to check if an image is cached
     function isImageCached(img) {
         return img.complete && img.naturalHeight !== 0;
