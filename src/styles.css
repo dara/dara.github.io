@@ -373,24 +373,16 @@
     display: flex;
     height: 50vw;
     flex-shrink: 0;
-    :where(& > :not(:last-child)) {
-      --tw-space-x-reverse: 0;
-      margin-inline-start: calc(5vw * var(--tw-space-x-reverse));
-      margin-inline-end: calc(5vw * calc(1 - var(--tw-space-x-reverse)));
-    }
     @media (width >= 48rem) {
       height: calc(var(--spacing) * 128);
     }
-    @media (width >= 48rem) {
-      :where(& > :not(:last-child)) {
-        --tw-space-x-reverse: 0;
-        margin-inline-start: calc(calc(var(--spacing) * 16) * var(--tw-space-x-reverse));
-        margin-inline-end: calc(calc(var(--spacing) * 16) * calc(1 - var(--tw-space-x-reverse)));
-      }
-    }
   }
   .work-image {
+    margin-right: 5vw;
     height: auto;
+    @media (width >= 48rem) {
+      margin-right: calc(var(--spacing) * 16);
+    }
   }
   .work-image-wide {
     aspect-ratio: 1512/982;
@@ -439,9 +431,4 @@ a {
   syntax: "*";
   inherits: false;
   initial-value: solid;
-}
-@property --tw-space-x-reverse {
-  syntax: "*";
-  inherits: false;
-  initial-value: 0;
 }
