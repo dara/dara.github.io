@@ -85,11 +85,11 @@
     }
     
     .work-row {
-        @apply flex space-x-[5vw] md:space-x-16 h-[50vw] md:h-128;
+        @apply flex h-[50vw] md:h-128;
     }
 
     .work-image {
-        @apply h-auto
+        @apply h-auto not-last:mr-[5vw] not-last:md:space-x-16;
     }
 
     .work-image-wide {
