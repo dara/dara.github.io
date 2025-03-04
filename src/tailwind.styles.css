@@ -1,4 +1,6 @@
-@import "tailwindcss";
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
 @layer base {
     img, video {
@@ -86,7 +88,14 @@
         @apply h-[48vw] md:h-128 mb-8 md:mb-16;
         @apply w-[calc(100vw-32px)] md:w-[calc(100vw-64px)];
         @apply flex flex-nowrap overflow-x-auto;
-        @apply gap-x-5 md:gap-x-16 pr-8 md:pr-16;
+        @apply gap-x-5 md:gap-x-16;
+        @apply relative;
+    }
+
+    /* Add a spacer element for padding effect using Tailwind classes */
+    .work-images::after {
+        @apply content-[''] block;
+        @apply flex-none w-[1px];
     }
 
     .work-images img {
