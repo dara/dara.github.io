@@ -237,8 +237,8 @@
   .bg-white {
     background-color: var(--color-white);
   }
-  .p-9 {
-    padding: calc(var(--spacing) * 9);
+  .p-8 {
+    padding: calc(var(--spacing) * 8);
   }
   .pb-0 {
     padding-bottom: calc(var(--spacing) * 0);
@@ -379,7 +379,7 @@
     border-bottom-style: var(--tw-border-style);
     border-bottom-width: 1px;
     border-color: var(--color-neutral-200);
-    padding: calc(var(--spacing) * 9);
+    padding: calc(var(--spacing) * 8);
     @media (width >= 48rem) {
       padding: calc(var(--spacing) * 16);
     }
@@ -388,8 +388,8 @@
     }
   }
   .work-images {
-    margin-bottom: calc(var(--spacing) * 9);
-    height: 50vw;
+    margin-bottom: calc(var(--spacing) * 8);
+    height: 48vw;
     @media (width >= 48rem) {
       margin-bottom: calc(var(--spacing) * 16);
     }
@@ -405,8 +405,8 @@
     flex-wrap: nowrap;
     :where(& > :not(:last-child)) {
       --tw-space-x-reverse: 0;
-      margin-inline-start: calc(5vw * var(--tw-space-x-reverse));
-      margin-inline-end: calc(5vw * calc(1 - var(--tw-space-x-reverse)));
+      margin-inline-start: calc(6vw * var(--tw-space-x-reverse));
+      margin-inline-end: calc(6vw * calc(1 - var(--tw-space-x-reverse)));
     }
     overflow-x: auto;
     @media (width >= 48rem) {
@@ -416,7 +416,7 @@
         margin-inline-end: calc(calc(var(--spacing) * 16) * calc(1 - var(--tw-space-x-reverse)));
       }
     }
-    padding-right: calc(var(--spacing) * 9);
+    padding-right: calc(var(--spacing) * 8);
     @media (width >= 48rem) {
       padding-right: calc(var(--spacing) * 16);
     }

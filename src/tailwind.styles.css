@@ -78,14 +78,14 @@
     }
 
     .work-container {
-        @apply p-9 md:p-16 border-b border-neutral-200 dark:border-neutral-800 relative;
+        @apply p-8 md:p-16 border-b border-neutral-200 dark:border-neutral-800 relative;
     }
     
     .work-images {
-        @apply h-[50vw] md:h-128 mb-9 md:mb-16;
+        @apply h-[48vw] md:h-128 mb-8 md:mb-16;
         @apply w-[calc(100vw-36px)] md:w-[calc(100vw-64px)];
-        @apply flex flex-shrink-0 space-x-[5vw] md:space-x-16 flex-nowrap overflow-x-auto;
-        @apply pr-9 md:pr-16;
+        @apply flex flex-shrink-0 space-x-[6vw] md:space-x-16 flex-nowrap overflow-x-auto;
+        @apply pr-8 md:pr-16;
     }
 
     .work-images img {
