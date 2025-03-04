@@ -8,8 +8,8 @@
     "concurrently": "^8.2.0"
   },
   "scripts": {
-    "dev": "concurrently \"npx @tailwindcss/cli -i ./src/tailwind.styles.css -o ./src/styles.css --watch\" \"live-server --port=3000 --open=./\"",
+    "dev": "concurrently \"npx @tailwindcss/cli -i ./src/tailwind.styles.css -o ./src/styles.css --watch\" \"live-server --port=3000 --host=0.0.0.0 --open=./\"",
     "tailwind": "npx @tailwindcss/cli -i ./src/tailwind.styles.css -o ./src/styles.css --watch",
-    "serve": "live-server --port=3000 --open=./"
+    "serve": "live-server --port=3000 --host=0.0.0.0 --open=./"
   }
 }

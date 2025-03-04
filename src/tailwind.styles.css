@@ -79,13 +79,14 @@
 
     .work-container {
         @apply p-8 md:p-16 border-b border-neutral-200 dark:border-neutral-800 relative;
+ 
     }
     
     .work-images {
         @apply h-[48vw] md:h-128 mb-8 md:mb-16;
-        @apply w-[calc(100vw-36px)] md:w-[calc(100vw-64px)];
-        @apply flex flex-shrink-0 space-x-[6vw] md:space-x-16 flex-nowrap overflow-x-auto;
-        @apply pr-8 md:pr-16;
+        @apply w-[calc(100vw-32px)] md:w-[calc(100vw-64px)];
+        @apply flex flex-nowrap overflow-x-auto;
+        @apply gap-x-5 md:gap-x-16 pr-8 md:pr-16;
     }
 
     .work-images img {

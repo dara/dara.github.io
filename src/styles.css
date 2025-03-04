@@ -396,27 +396,18 @@
     @media (width >= 48rem) {
       height: calc(var(--spacing) * 128);
     }
-    width: calc(100vw - 36px);
+    width: calc(100vw - 32px);
     @media (width >= 48rem) {
       width: calc(100vw - 64px);
     }
     display: flex;
-    flex-shrink: 0;
     flex-wrap: nowrap;
-    :where(& > :not(:last-child)) {
-      --tw-space-x-reverse: 0;
-      margin-inline-start: calc(6vw * var(--tw-space-x-reverse));
-      margin-inline-end: calc(6vw * calc(1 - var(--tw-space-x-reverse)));
-    }
     overflow-x: auto;
-    @media (width >= 48rem) {
-      :where(& > :not(:last-child)) {
-        --tw-space-x-reverse: 0;
-        margin-inline-start: calc(calc(var(--spacing) * 16) * var(--tw-space-x-reverse));
-        margin-inline-end: calc(calc(var(--spacing) * 16) * calc(1 - var(--tw-space-x-reverse)));
-      }
-    }
+    column-gap: calc(var(--spacing) * 5);
     padding-right: calc(var(--spacing) * 8);
+    @media (width >= 48rem) {
+      column-gap: calc(var(--spacing) * 16);
+    }
     @media (width >= 48rem) {
       padding-right: calc(var(--spacing) * 16);
     }
@@ -474,9 +465,4 @@ a {
   syntax: "*";
   inherits: false;
   initial-value: solid;
-}
-@property --tw-space-x-reverse {
-  syntax: "*";
-  inherits: false;
-  initial-value: 0;
 }
