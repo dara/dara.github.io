@@ -371,11 +371,11 @@
   }
   .work-row {
     display: flex;
-    height: calc(var(--spacing) * 48);
+    height: 50vw;
     :where(& > :not(:last-child)) {
       --tw-space-x-reverse: 0;
-      margin-inline-start: calc(calc(var(--spacing) * 6) * var(--tw-space-x-reverse));
-      margin-inline-end: calc(calc(var(--spacing) * 6) * calc(1 - var(--tw-space-x-reverse)));
+      margin-inline-start: calc(5vw * var(--tw-space-x-reverse));
+      margin-inline-end: calc(5vw * calc(1 - var(--tw-space-x-reverse)));
     }
     @media (width >= 48rem) {
       height: calc(var(--spacing) * 128);

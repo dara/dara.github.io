@@ -85,7 +85,7 @@
     }
     
     .work-row {
-        @apply flex space-x-6 md:space-x-16 h-48 md:h-128;
+        @apply flex space-x-[5vw] md:space-x-16 h-[50vw] md:h-128;
     }
 
     .work-image {
