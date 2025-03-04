@@ -5,8 +5,6 @@
         max-width: none;
         height: auto;
     }
-    
-    /* Add fix for mobile viewport height calculation */
     html, body {
         height: 100%;
     }
@@ -21,6 +19,10 @@
         -ms-overflow-style: none;
         scrollbar-width: none;
     }
+
+    .text-secondary {
+        @apply text-neutral-500 dark:text-neutral-400;
+    }
 }
 
 @layer components {
@@ -31,14 +33,13 @@
         right: 0;
         bottom: 0;
         width: 100%;
-        /* Use the custom --vh variable for more accurate height on mobile */
-        height: 100vh; /* Fallback */
-        height: calc(var(--vh, 1vh) * 100); /* Better for mobile browsers, especially Safari */
+        height: 100vh;
+        height: calc(var(--vh, 1vh) * 100);
         z-index: 50;
         display: flex;
         align-items: center;
         justify-content: center;
-        background-color: var(--color-neutral-950);
+        @apply bg-white dark:bg-neutral-950;
         transition: opacity 0.8s var(--ease-out);
     }
 
@@ -48,7 +49,7 @@
     }
 
     .loader-content h1 {
-        @apply text-neutral-200 font-medium text-xl md:text-2xl;
+        @apply text-neutral-900 dark:text-neutral-200 font-medium text-xl md:text-2xl;
         opacity: 0.9;
     }
 
@@ -77,27 +78,26 @@
     }
 
     .work-container {
-        @apply p-9 pr-0 md:p-16 border-b border-neutral-800;
-    }
-
-    .work-scroll {
-        @apply pb-10 md:pb-16 overflow-x-scroll;
+        @apply p-9 md:p-16 border-b border-neutral-200 dark:border-neutral-800 relative;
     }
     
-    .work-row {
-        @apply flex flex-shrink-0 h-[50vw] md:h-128;
+    .work-images {
+        @apply h-[50vw] md:h-128 mb-9 md:mb-16;
+        @apply w-[calc(100vw-36px)] md:w-[calc(100vw-64px)];
+        @apply flex flex-shrink-0 space-x-[5vw] md:space-x-16 flex-nowrap overflow-x-auto;
+        @apply pr-9 md:pr-16;
     }
 
-    .work-image {
-        @apply h-auto mr-[5vw] md:mr-16
+    .work-images img {
+        @apply h-auto;
     }
 
-    .work-image-wide {
+    .wide-image {
         @apply aspect-[1512/982] object-cover;
     }
 
-    .work-description {
-        @apply pr-9 md:pr-0;
+    .with-border {
+        @apply border border-neutral-200 dark:border-0;
     }
 }
 
