@@ -44,7 +44,7 @@ document.addEventListener('DOMContentLoaded', function() {
             setTimeout(() => {
                 // Hide loading screen
                 loadingScreen.classList.add('hidden');
-                // Show content
+                // Show content with fade-in effect
                 setTimeout(() => {
                     fadeElement.classList.add('visible');
                 }, 300); // Slight delay before showing content after loading screen fades out
