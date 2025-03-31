@@ -555,8 +555,8 @@ video {
 }
 
 img, video {
-  max-width: none;
   height: auto;
+  max-width: none;
 }
 
 html, body {
@@ -599,15 +599,11 @@ html, body {
 
 #loading-screen {
   position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  width: 100%;
-  height: 100vh;
-  height: calc(var(--vh, 1vh) * 100);
+  inset: 0px;
   z-index: 50;
   display: flex;
+  height: 100vh;
+  width: 100%;
   align-items: center;
   justify-content: center;
   --tw-bg-opacity: 1;
@@ -622,6 +618,7 @@ html, body {
 }
 
 #loading-screen {
+  height: calc(var(--vh, 1vh) * 100);
   transition: opacity 0.8s var(--ease-out);
 }
 
@@ -636,6 +633,7 @@ html, body {
   font-weight: 500;
   --tw-text-opacity: 1;
   color: rgb(23 23 23 / var(--tw-text-opacity, 1));
+  opacity: 0.9;
 }
 
 @media (min-width: 768px) {
@@ -650,10 +648,6 @@ html, body {
     --tw-text-opacity: 1;
     color: rgb(229 229 229 / var(--tw-text-opacity, 1));
   }
-}
-
-.loader-content h1 {
-  opacity: 0.9;
 }
 
 @keyframes fadeInUp {
@@ -744,14 +738,12 @@ html, body {
   position: relative;
 }
 
-/* Add a spacer element for padding effect using Tailwind classes */
-
 .work-images::after {
   display: block;
-  --tw-content: '';
-  content: var(--tw-content);
   width: 1px;
   flex: none;
+  --tw-content: '';
+  content: var(--tw-content);
 }
 
 .work-images img {
@@ -796,8 +788,33 @@ html, body {
   position: relative;
 }
 
+.inset-0 {
+  inset: 0px;
+}
+
+.z-50 {
+  z-index: 50;
+}
+
+.mx-auto {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.mb-4 {
+  margin-bottom: 1rem;
+}
+
 .mb-8 {
   margin-bottom: 2rem;
+}
+
+.mt-2 {
+  margin-top: 0.5rem;
+}
+
+.mt-4 {
+  margin-top: 1rem;
 }
 
 .block {
@@ -836,6 +853,10 @@ html, body {
   height: 48vw;
 }
 
+.h-screen {
+  height: 100vh;
+}
+
 .min-h-screen {
   min-height: 100vh;
 }
@@ -868,12 +889,28 @@ html, body {
   width: calc(100vw - 32px);
 }
 
+.w-full {
+  width: 100%;
+}
+
+.max-w-2xl {
+  max-width: 42rem;
+}
+
 .max-w-md {
   max-width: 28rem;
 }
 
+.max-w-none {
+  max-width: none;
+}
+
 .max-w-sm {
   max-width: 24rem;
+}
+
+.max-w-xl {
+  max-width: 36rem;
 }
 
 .flex-none {
@@ -916,8 +953,16 @@ html, body {
   align-items: flex-end;
 }
 
+.items-center {
+  align-items: center;
+}
+
 .justify-start {
   justify-content: flex-start;
+}
+
+.justify-center {
+  justify-content: center;
 }
 
 .gap-4 {
@@ -932,6 +977,12 @@ html, body {
 .gap-x-5 {
   -moz-column-gap: 1.25rem;
        column-gap: 1.25rem;
+}
+
+.space-y-8 > :not([hidden]) ~ :not([hidden]) {
+  --tw-space-y-reverse: 0;
+  margin-top: calc(2rem * calc(1 - var(--tw-space-y-reverse)));
+  margin-bottom: calc(2rem * var(--tw-space-y-reverse));
 }
 
 .border {
@@ -976,6 +1027,20 @@ html, body {
 
 .pr-8 {
   padding-right: 2rem;
+}
+
+.pt-8 {
+  padding-top: 2rem;
+}
+
+.text-2xl {
+  font-size: 1.5rem;
+  line-height: 2rem;
+}
+
+.text-sm {
+  font-size: 0.875rem;
+  line-height: 1.25rem;
 }
 
 .text-xl {
@@ -1076,7 +1141,12 @@ html, body {
 }
 
 a {
-  text-decoration: underline;
+  text-decoration-line: underline;
+}
+
+.hover\:text-neutral-900:hover {
+  --tw-text-opacity: 1;
+  color: rgb(23 23 23 / var(--tw-text-opacity, 1));
 }
 
 @media (min-width: 768px) {
@@ -1107,6 +1177,11 @@ a {
   .md\:pb-0 {
     padding-bottom: 0px;
   }
+
+  .md\:text-2xl {
+    font-size: 1.5rem;
+    line-height: 2rem;
+  }
 }
 
 @media (prefers-color-scheme: dark) {
@@ -1121,6 +1196,11 @@ a {
   }
 
   .dark\:text-neutral-200 {
+    --tw-text-opacity: 1;
+    color: rgb(229 229 229 / var(--tw-text-opacity, 1));
+  }
+
+  .dark\:hover\:text-neutral-200:hover {
     --tw-text-opacity: 1;
     color: rgb(229 229 229 / var(--tw-text-opacity, 1));
   }

@@ -9,11 +9,10 @@
 
 @layer base {
     img, video {
-        max-width: none;
-        height: auto;
+        @apply max-w-none h-auto;
     }
     html, body {
-        height: 100%;
+        @apply h-full;
     }
 }
 
@@ -34,19 +33,8 @@
 
 @layer components {
     #loading-screen {
-        position: fixed;
-        top: 0;
-        left: 0;
-        right: 0;
-        bottom: 0;
-        width: 100%;
-        height: 100vh;
+        @apply fixed inset-0 w-full h-screen z-50 flex items-center justify-center bg-white dark:bg-neutral-950;
         height: calc(var(--vh, 1vh) * 100);
-        z-index: 50;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        @apply bg-white dark:bg-neutral-950;
         transition: opacity 0.8s var(--ease-out);
     }
 
@@ -56,8 +44,7 @@
     }
 
     .loader-content h1 {
-        @apply text-neutral-900 dark:text-neutral-200 font-medium text-xl md:text-2xl;
-        opacity: 0.9;
+        @apply text-neutral-900 dark:text-neutral-200 font-medium text-xl md:text-2xl opacity-90;
     }
 
     @keyframes fadeInUp {
@@ -86,7 +73,6 @@
 
     .work-container {
         @apply p-8 md:p-16 border-b border-neutral-200 dark:border-neutral-800 relative;
- 
     }
     
     .work-images {
@@ -97,10 +83,8 @@
         @apply relative;
     }
 
-    /* Add a spacer element for padding effect using Tailwind classes */
     .work-images::after {
-        @apply content-[''] block;
-        @apply flex-none w-[1px];
+        @apply content-[''] block flex-none w-[1px];
     }
 
     .work-images img {
@@ -117,5 +101,5 @@
 }
 
 a {
-    text-decoration: underline;
+    @apply underline;
 }

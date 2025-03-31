@@ -1,15 +1,22 @@
 {
   "dependencies": {
-    "tailwindcss": "^3.3.5",
-    "chokidar": "^3.5.3"
+    "browserslist": "^4.24.4",
+    "caniuse-lite": "^1.0.30001707",
+    "chokidar": "^3.5.3",
+    "tailwindcss": "^3.3.5"
   },
   "devDependencies": {
-    "live-server": "^1.2.2",
-    "concurrently": "^8.2.0"
+    "concurrently": "^8.2.0",
+    "live-server": "^1.2.2"
   },
   "scripts": {
     "dev": "concurrently \"npx tailwindcss -i ./src/tailwind.styles.css -o ./src/styles.css --watch --poll\" \"live-server --port=3000 --host=0.0.0.0 --open=./\"",
     "tailwind": "npx tailwindcss -i ./src/tailwind.styles.css -o ./src/styles.css --watch --poll",
     "serve": "live-server --port=3000 --host=0.0.0.0 --open=./"
-  }
+  },
+  "browserslist": [
+    "defaults",
+    "not IE 11",
+    "maintained node versions"
+  ]
 }

@@ -26,6 +26,31 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Get all images on the page
     const images = document.querySelectorAll('img');
+    
+    // Check if we need to preload anything
+    let needsPreloading = false;
+    
+    // If there are no images, or all images are already cached, skip the loading screen
+    if (images.length === 0) {
+        needsPreloading = false;
+    } else {
+        // Check if any image needs loading
+        for (const img of images) {
+            if (!isImageCached(img)) {
+                needsPreloading = true;
+                break;
+            }
+        }
+    }
+    
+    if (!needsPreloading) {
+        // Hide loading screen immediately and show content
+        loadingScreen.classList.add('hidden');
+        fadeElement.classList.add('visible');
+        return;
+    }
+    
+    // If we need to preload images, set up the image promises
     const imagePromises = Array.from(images).map(img => {
         return new Promise(resolve => {
             if (isImageCached(img)) {
