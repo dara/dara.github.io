@@ -8,11 +8,27 @@
 }
 
 @layer base {
+    @font-face {
+        font-family: "Uncut Sans Variable";
+        src: url("/src/fonts/UncutSans-Variable.ttf") format("truetype");
+        font-style: normal;
+        font-weight: 100 900;
+        font-display: swap;
+    }
+
+    html {
+        font-family: "Uncut Sans Variable", sans-serif;
+    }
+
     img, video {
         @apply max-w-none h-auto;
     }
     html, body {
         @apply h-full;
+    }
+
+    body {
+        @apply text-lg;
     }
 }
 
@@ -72,7 +88,7 @@
     }
 
     .work-container {
-        @apply p-8 md:p-16 border-b border-neutral-200 dark:border-neutral-800 relative;
+        @apply p-8 md:p-12 border-b border-neutral-200 dark:border-neutral-800 relative;
     }
     
     .work-images {

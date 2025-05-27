@@ -554,6 +554,22 @@ video {
   display: none;
 }
 
+@font-face {
+  font-family: "Uncut Sans Variable";
+
+  src: url("/src/fonts/UncutSans-Variable.ttf") format("truetype");
+
+  font-style: normal;
+
+  font-weight: 100 900;
+
+  font-display: swap;
+}
+
+html {
+  font-family: "Uncut Sans Variable", sans-serif;
+}
+
 img, video {
   height: auto;
   max-width: none;
@@ -561,6 +577,11 @@ img, video {
 
 html, body {
   height: 100%;
+}
+
+body {
+  font-size: 1.125rem;
+  line-height: 1.75rem;
 }
 
 .container {
@@ -686,7 +707,7 @@ html, body {
 
 @media (min-width: 768px) {
   .work-container {
-    padding: 4rem;
+    padding: 3rem;
   }
 }
 
@@ -796,15 +817,6 @@ html, body {
   z-index: 50;
 }
 
-.mx-auto {
-  margin-left: auto;
-  margin-right: auto;
-}
-
-.mb-4 {
-  margin-bottom: 1rem;
-}
-
 .mb-8 {
   margin-bottom: 2rem;
 }
@@ -861,26 +873,6 @@ html, body {
   min-height: 100vh;
 }
 
-.w-0 {
-  width: 0px;
-}
-
-.w-1 {
-  width: 0.25rem;
-}
-
-.w-2 {
-  width: 0.5rem;
-}
-
-.w-5 {
-  width: 1.25rem;
-}
-
-.w-8 {
-  width: 2rem;
-}
-
 .w-\[1px\] {
   width: 1px;
 }
@@ -893,8 +885,8 @@ html, body {
   width: 100%;
 }
 
-.max-w-2xl {
-  max-width: 42rem;
+.max-w-lg {
+  max-width: 32rem;
 }
 
 .max-w-md {
@@ -969,11 +961,6 @@ html, body {
   gap: 1rem;
 }
 
-.gap-x-16 {
-  -moz-column-gap: 4rem;
-       column-gap: 4rem;
-}
-
 .gap-x-5 {
   -moz-column-gap: 1.25rem;
        column-gap: 1.25rem;
@@ -1003,11 +990,6 @@ html, body {
   border-color: rgb(38 38 38 / var(--tw-border-opacity, 1));
 }
 
-.bg-neutral-50 {
-  --tw-bg-opacity: 1;
-  background-color: rgb(250 250 250 / var(--tw-bg-opacity, 1));
-}
-
 .bg-neutral-950 {
   --tw-bg-opacity: 1;
   background-color: rgb(10 10 10 / var(--tw-bg-opacity, 1));
@@ -1016,6 +998,10 @@ html, body {
 .bg-white {
   --tw-bg-opacity: 1;
   background-color: rgb(255 255 255 / var(--tw-bg-opacity, 1));
+}
+
+.p-12 {
+  padding: 3rem;
 }
 
 .p-16 {
@@ -1030,10 +1016,6 @@ html, body {
   padding-bottom: 0px;
 }
 
-.pr-8 {
-  padding-right: 2rem;
-}
-
 .pt-8 {
   padding-top: 2rem;
 }
@@ -1041,6 +1023,16 @@ html, body {
 .text-2xl {
   font-size: 1.5rem;
   line-height: 2rem;
+}
+
+.text-3xl {
+  font-size: 1.875rem;
+  line-height: 2.25rem;
+}
+
+.text-7xl {
+  font-size: 4.5rem;
+  line-height: 1;
 }
 
 .text-sm {
@@ -1064,11 +1056,6 @@ html, body {
 .text-neutral-200 {
   --tw-text-opacity: 1;
   color: rgb(229 229 229 / var(--tw-text-opacity, 1));
-}
-
-.text-neutral-500 {
-  --tw-text-opacity: 1;
-  color: rgb(115 115 115 / var(--tw-text-opacity, 1));
 }
 
 .text-neutral-600 {
@@ -1180,8 +1167,8 @@ a {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
-  .md\:p-16 {
-    padding: 4rem;
+  .md\:p-12 {
+    padding: 3rem;
   }
 
   .md\:pb-0 {
