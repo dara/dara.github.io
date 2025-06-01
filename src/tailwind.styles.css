@@ -63,10 +63,6 @@
         animation: fadeInUp 1.2s var(--ease-out) forwards;
     }
 
-    .loader-content h1 {
-        @apply text-neutral-900 dark:text-neutral-200 font-medium text-xl md:text-2xl opacity-90;
-    }
-
     @keyframes fadeInUp {
         0% {
             opacity: 0;

@@ -662,29 +662,6 @@ body {
   animation: fadeInUp 1.2s var(--ease-out) forwards;
 }
 
-.loader-content h1 {
-  font-size: 1.25rem;
-  line-height: 1.75rem;
-  font-weight: 500;
-  --tw-text-opacity: 1;
-  color: rgb(23 23 23 / var(--tw-text-opacity, 1));
-  opacity: 0.9;
-}
-
-@media (min-width: 768px) {
-  .loader-content h1 {
-    font-size: 1.5rem;
-    line-height: 2rem;
-  }
-}
-
-@media (prefers-color-scheme: dark) {
-  .loader-content h1 {
-    --tw-text-opacity: 1;
-    color: rgb(229 229 229 / var(--tw-text-opacity, 1));
-  }
-}
-
 @keyframes fadeInUp {
   0% {
     opacity: 0;
@@ -1133,6 +1110,11 @@ body {
   color: rgb(229 229 229 / var(--tw-text-opacity, 1));
 }
 
+.text-neutral-300 {
+  --tw-text-opacity: 1;
+  color: rgb(212 212 212 / var(--tw-text-opacity, 1));
+}
+
 .text-neutral-600 {
   --tw-text-opacity: 1;
   color: rgb(82 82 82 / var(--tw-text-opacity, 1));
@@ -1151,11 +1133,6 @@ body {
 .text-neutral-900 {
   --tw-text-opacity: 1;
   color: rgb(23 23 23 / var(--tw-text-opacity, 1));
-}
-
-.text-neutral-300 {
-  --tw-text-opacity: 1;
-  color: rgb(212 212 212 / var(--tw-text-opacity, 1));
 }
 
 .underline {
@@ -1268,11 +1245,6 @@ a {
   .md\:pb-0 {
     padding-bottom: 0px;
   }
-
-  .md\:text-2xl {
-    font-size: 1.5rem;
-    line-height: 2rem;
-  }
 }
 
 @media (prefers-color-scheme: dark) {
@@ -1284,11 +1256,6 @@ a {
   .dark\:bg-neutral-950 {
     --tw-bg-opacity: 1;
     background-color: rgb(10 10 10 / var(--tw-bg-opacity, 1));
-  }
-
-  .dark\:text-neutral-200 {
-    --tw-text-opacity: 1;
-    color: rgb(229 229 229 / var(--tw-text-opacity, 1));
   }
 
   .dark\:text-neutral-300 {
