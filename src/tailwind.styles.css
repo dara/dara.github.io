@@ -62,50 +62,6 @@
         @apply text-center;
     }
 
-    .pie-chart-loader {
-        width: 36px;
-        height: 36px;
-        border-radius: 50%;
-        background: #f3f4f6;
-        position: relative;
-        overflow: hidden;
-    }
-
-    .pie-chart-loader::before {
-        content: '';
-        position: absolute;
-        top: 0;
-        left: 50%;
-        width: 50%;
-        height: 100%;
-        background: #fbbf24;
-        transform-origin: left center;
-        animation: pieChartFill 2s ease-in-out infinite;
-    }
-
-    .pie-chart-loader::after {
-        content: '';
-        position: absolute;
-        top: 6px;
-        left: 6px;
-        width: 24px;
-        height: 24px;
-        background: white;
-        border-radius: 50%;
-    }
-
-    @keyframes pieChartFill {
-        0% { 
-            transform: rotate(90deg);
-        }
-        50% {
-            transform: rotate(270deg);
-        }
-        100% { 
-            transform: rotate(450deg);
-        }
-    }
-
     #loading-screen.hidden {
         @apply opacity-0 pointer-events-none;
     }
