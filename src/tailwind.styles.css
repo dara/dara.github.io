@@ -32,7 +32,7 @@
     }
 
     body {
-        @apply bg-white text-neutral-800 dark:bg-neutral-950 dark:text-neutral-300 min-h-screen antialiased;
+        @apply bg-white text-neutral-800 min-h-screen antialiased;
     }
 }
 
@@ -47,30 +47,62 @@
     }
 
     .text-secondary {
-        @apply text-neutral-600 dark:text-neutral-400;
+        @apply text-neutral-600;
     }
 }
 
 @layer components {
     #loading-screen {
-        @apply fixed inset-0 w-full h-screen z-50 flex items-center justify-center bg-white dark:bg-neutral-950;
+        @apply fixed inset-0 w-full h-screen z-50 flex items-center justify-center bg-white;
         height: calc(var(--vh, 1vh) * 100);
         transition: opacity 0.8s var(--ease-out);
     }
 
     .loader-content {
         @apply text-center;
-        animation: fadeInUp 1.2s var(--ease-out) forwards;
     }
 
-    @keyframes fadeInUp {
-        0% {
-            opacity: 0;
-            transform: translateY(30px);
+    .pie-chart-loader {
+        width: 36px;
+        height: 36px;
+        border-radius: 50%;
+        background: #f3f4f6;
+        position: relative;
+        overflow: hidden;
+    }
+
+    .pie-chart-loader::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 50%;
+        width: 50%;
+        height: 100%;
+        background: #fbbf24;
+        transform-origin: left center;
+        animation: pieChartFill 2s ease-in-out infinite;
+    }
+
+    .pie-chart-loader::after {
+        content: '';
+        position: absolute;
+        top: 6px;
+        left: 6px;
+        width: 24px;
+        height: 24px;
+        background: white;
+        border-radius: 50%;
+    }
+
+    @keyframes pieChartFill {
+        0% { 
+            transform: rotate(90deg);
         }
-        100% {
-            opacity: 1;
-            transform: translateY(0);
+        50% {
+            transform: rotate(270deg);
+        }
+        100% { 
+            transform: rotate(450deg);
         }
     }
 
@@ -88,7 +120,7 @@
     }
 
     .work-container {
-        @apply p-8 md:p-12 border-b border-neutral-200 dark:border-neutral-800 relative;
+        @apply p-8 md:p-12 border-b border-neutral-200 relative;
     }
     
     .work-images {
@@ -112,7 +144,7 @@
     }
 
     .with-border {
-        @apply border border-neutral-200 dark:border-0;
+        @apply border border-neutral-200;
     }
 }
 
