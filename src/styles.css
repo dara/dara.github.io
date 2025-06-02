@@ -759,7 +759,7 @@ body {
 
 @media (min-width: 768px) {
   .work-images img:not(:last-child) {
-    margin-right: 3rem;
+    margin-right: 4rem;
   }
 }
 

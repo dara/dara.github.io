@@ -110,7 +110,7 @@
     }
 
     .work-images img:not(:last-child) {
-        @apply mr-8 md:mr-12;
+        @apply mr-8 md:mr-16;
     }
 
     .wide-image {
