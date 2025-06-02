@@ -120,6 +120,22 @@
     .with-border {
         @apply border border-neutral-200;
     }
+
+    .project-meta {
+        @apply mb-6 grid grid-cols-2 gap-x-8 gap-y-4 text-neutral-600;
+    }
+
+    .project-meta-item {
+        @apply flex flex-col;
+    }
+
+    .project-meta-label {
+        @apply text-neutral-400 uppercase tracking-wide text-sm mb-1;
+    }
+
+    .project-meta-value {
+        @apply text-neutral-800 font-medium;
+    }
 }
 
 a {
