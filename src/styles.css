@@ -663,6 +663,10 @@ body {
   opacity: 0.9;
 }
 
+.loading-animation.flipped {
+  transform: scaleX(-1);
+}
+
 #loading-screen.hidden {
   pointer-events: none;
   opacity: 0;

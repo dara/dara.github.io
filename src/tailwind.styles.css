@@ -68,6 +68,10 @@
         opacity: 0.9;
     }
 
+    .loading-animation.flipped {
+        transform: scaleX(-1);
+    }
+
     #loading-screen.hidden {
         @apply opacity-0 pointer-events-none;
     }
