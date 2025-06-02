@@ -686,12 +686,26 @@ body {
   border-bottom-width: 1px;
   --tw-border-opacity: 1;
   border-color: rgb(229 229 229 / var(--tw-border-opacity, 1));
-  padding: 2rem;
+  padding-top: 2rem;
+  padding-bottom: 2rem;
 }
 
 @media (min-width: 768px) {
   .work-container {
-    padding: 3rem;
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+  }
+}
+
+.work-images {
+  padding-left: 2rem;
+  padding-right: 2rem;
+}
+
+@media (min-width: 768px) {
+  .work-images {
+    padding-left: 3rem;
+    padding-right: 3rem;
   }
 }
 
@@ -708,32 +722,23 @@ body {
 }
 
 .work-images {
-  width: calc(100vw - 32px);
-}
-
-@media (min-width: 768px) {
-  .work-images {
-    width: calc(100vw - 48px);
-  }
-}
-
-.work-images {
+  width: 100vw;
   display: flex;
   flex-wrap: nowrap;
   overflow-x: auto;
-  -moz-column-gap: 1.25rem;
-       column-gap: 1.25rem;
+  position: relative;
+}
+
+.work-description {
+  padding-left: 2rem;
+  padding-right: 2rem;
 }
 
 @media (min-width: 768px) {
-  .work-images {
-    -moz-column-gap: 4rem;
-         column-gap: 4rem;
+  .work-description {
+    padding-left: 3rem;
+    padding-right: 3rem;
   }
-}
-
-.work-images {
-  position: relative;
 }
 
 .work-images::after {
@@ -746,6 +751,16 @@ body {
 
 .work-images img {
   height: auto;
+}
+
+.work-images img:not(:last-child) {
+  margin-right: 2rem;
+}
+
+@media (min-width: 768px) {
+  .work-images img:not(:last-child) {
+    margin-right: 3rem;
+  }
 }
 
 .wide-image {
@@ -802,6 +817,10 @@ body {
 
 .mb-8 {
   margin-bottom: 2rem;
+}
+
+.mr-8 {
+  margin-right: 2rem;
 }
 
 .mt-12 {
@@ -876,12 +895,12 @@ body {
   width: 2rem;
 }
 
-.w-\[1px\] {
-  width: 1px;
+.w-\[100vw\] {
+  width: 100vw;
 }
 
-.w-\[calc\(100vw-32px\)\] {
-  width: calc(100vw - 32px);
+.w-\[1px\] {
+  width: 1px;
 }
 
 .w-full {
@@ -969,6 +988,12 @@ body {
        column-gap: 1.25rem;
 }
 
+.space-x-5 > :not([hidden]) ~ :not([hidden]) {
+  --tw-space-x-reverse: 0;
+  margin-right: calc(1.25rem * var(--tw-space-x-reverse));
+  margin-left: calc(1.25rem * calc(1 - var(--tw-space-x-reverse)));
+}
+
 .space-y-6 > :not([hidden]) ~ :not([hidden]) {
   --tw-space-y-reverse: 0;
   margin-top: calc(1.5rem * calc(1 - var(--tw-space-y-reverse)));
@@ -1030,8 +1055,27 @@ body {
   padding: 2rem;
 }
 
+.px-8 {
+  padding-left: 2rem;
+  padding-right: 2rem;
+}
+
+.py-12 {
+  padding-top: 3rem;
+  padding-bottom: 3rem;
+}
+
+.py-8 {
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+}
+
 .pb-0 {
   padding-bottom: 0px;
+}
+
+.pl-8 {
+  padding-left: 2rem;
 }
 
 .pr-12 {
@@ -1236,10 +1280,6 @@ a {
     width: 12rem;
   }
 
-  .md\:w-\[calc\(100vw-48px\)\] {
-    width: calc(100vw - 48px);
-  }
-
   .md\:max-w-sm {
     max-width: 24rem;
   }
@@ -1250,6 +1290,11 @@ a {
 
   .md\:p-12 {
     padding: 3rem;
+  }
+
+  .md\:py-12 {
+    padding-top: 3rem;
+    padding-bottom: 3rem;
   }
 
   .md\:pb-0 {
