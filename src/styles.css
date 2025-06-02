@@ -713,7 +713,7 @@ body {
 
 @media (min-width: 768px) {
   .work-images {
-    width: calc(100vw - 64px);
+    width: calc(100vw - 48px);
   }
 }
 
@@ -1236,8 +1236,8 @@ a {
     width: 12rem;
   }
 
-  .md\:w-\[calc\(100vw-64px\)\] {
-    width: calc(100vw - 64px);
+  .md\:w-\[calc\(100vw-48px\)\] {
+    width: calc(100vw - 48px);
   }
 
   .md\:max-w-sm {

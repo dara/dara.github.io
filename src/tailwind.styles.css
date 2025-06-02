@@ -91,7 +91,7 @@
     
     .work-images {
         @apply h-[48vw] md:h-[480px] mb-8 md:mb-16;
-        @apply w-[calc(100vw-32px)] md:w-[calc(100vw-64px)];
+        @apply w-[calc(100vw-32px)] md:w-[calc(100vw-48px)];
         @apply flex flex-nowrap overflow-x-auto;
         @apply gap-x-5 md:gap-x-16;
         @apply relative;
