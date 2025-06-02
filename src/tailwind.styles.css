@@ -63,7 +63,7 @@
     }
 
     .loading-animation {
-        @apply w-40 md:w-56;
+        @apply w-40 md:w-48 xl:w-56;
         height: auto;
         opacity: 0.9;
     }

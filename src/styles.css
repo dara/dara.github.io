@@ -648,6 +648,12 @@ body {
 
 @media (min-width: 768px) {
   .loading-animation {
+    width: 12rem;
+  }
+}
+
+@media (min-width: 1280px) {
+  .loading-animation {
     width: 14rem;
   }
 }
@@ -1220,6 +1226,10 @@ a {
 
   .md\:h-\[480px\] {
     height: 480px;
+  }
+
+  .md\:w-48 {
+    width: 12rem;
   }
 
   .md\:w-\[calc\(100vw-64px\)\] {
