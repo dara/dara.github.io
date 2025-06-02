@@ -62,6 +62,12 @@
         @apply text-center;
     }
 
+    .loading-animation {
+        @apply w-40 md:w-56;
+        height: auto;
+        opacity: 0.9;
+    }
+
     #loading-screen.hidden {
         @apply opacity-0 pointer-events-none;
     }

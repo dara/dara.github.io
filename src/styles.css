@@ -642,6 +642,21 @@ body {
   text-align: center;
 }
 
+.loading-animation {
+  width: 10rem;
+}
+
+@media (min-width: 768px) {
+  .loading-animation {
+    width: 14rem;
+  }
+}
+
+.loading-animation {
+  height: auto;
+  opacity: 0.9;
+}
+
 #loading-screen.hidden {
   pointer-events: none;
   opacity: 0;
@@ -837,6 +852,18 @@ body {
 
 .min-h-screen {
   min-height: 100vh;
+}
+
+.w-40 {
+  width: 10rem;
+}
+
+.w-48 {
+  width: 12rem;
+}
+
+.w-8 {
+  width: 2rem;
 }
 
 .w-\[1px\] {
