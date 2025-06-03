@@ -130,7 +130,7 @@
     }
 
     .project-meta-label {
-        @apply text-neutral-400 uppercase tracking-wide text-sm mb-1;
+        @apply text-neutral-400;
     }
 
     .project-meta-value {
