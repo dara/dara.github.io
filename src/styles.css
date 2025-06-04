@@ -568,18 +568,13 @@ video {
 
 html {
   font-family: "Uncut Sans Variable", sans-serif;
-}
-
-img, video {
-  height: auto;
-  max-width: none;
-}
-
-html, body {
   height: 100%;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
 }
 
 body {
+  height: 100%;
   min-height: 100vh;
   --tw-bg-opacity: 1;
   background-color: rgb(0 0 0 / var(--tw-bg-opacity, 1));
@@ -588,6 +583,13 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   overscroll-behavior: none;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+img, video {
+  height: auto;
+  max-width: none;
 }
 
 a {
@@ -603,11 +605,6 @@ a:hover {
 
 ::-webkit-scrollbar {
   display: none;
-}
-
-html, body {
-  -ms-overflow-style: none;
-  scrollbar-width: none;
 }
 
 .container {
@@ -665,6 +662,7 @@ html, body {
 
 .loading-animation {
   width: 10rem;
+  opacity: 0.9;
 }
 
 @media (min-width: 768px) {
@@ -681,7 +679,6 @@ html, body {
 
 .loading-animation {
   height: auto;
-  opacity: 0.9;
   image-rendering: pixelated;
 }
 
@@ -717,21 +714,16 @@ html, body {
 }
 
 .work-images {
-  padding-left: 2rem;
-  padding-right: 2rem;
-}
-
-@media (min-width: 768px) {
-  .work-images {
-    padding-left: 3rem;
-    padding-right: 3rem;
-  }
-}
-
-.work-images {
+  position: relative;
   margin-top: 2rem;
   margin-bottom: 2rem;
+  display: flex;
   height: 48vw;
+  width: 100vw;
+  flex-wrap: nowrap;
+  overflow-x: auto;
+  padding-left: 2rem;
+  padding-right: 2rem;
 }
 
 @media (min-width: 768px) {
@@ -739,15 +731,9 @@ html, body {
     margin-top: 3rem;
     margin-bottom: 3rem;
     height: 480px;
+    padding-left: 3rem;
+    padding-right: 3rem;
   }
-}
-
-.work-images {
-  width: 100vw;
-  display: flex;
-  flex-wrap: nowrap;
-  overflow-x: auto;
-  position: relative;
 }
 
 .work-description {
@@ -821,6 +807,61 @@ html, body {
   font-weight: 500;
   --tw-text-opacity: 1;
   color: rgb(38 38 38 / var(--tw-text-opacity, 1));
+}
+
+main {
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  z-index: 0;
+  height: 100vh;
+  width: 100%;
+}
+
+.scroll-container {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  width: 100%;
+  opacity: 0;
+  will-change: transform;
+}
+
+.scroll-content section {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-bottom: 8rem;
+}
+
+.scroll-content section figure {
+  max-width: 40vw;
+}
+
+.scroll-content section figure.l {
+  max-width: 55vw;
+}
+
+.scroll-content section figure.s {
+  max-width: 30vw;
+}
+
+.scroll-content section figure.r {
+  margin-left: auto;
+}
+
+figure img {
+  width: 100%;
+}
+
+figure figcaption {
+  padding: 3rem;
+}
+
+@media (min-width: 768px) {
+  figure figcaption {
+    max-width: 36rem;
+  }
 }
 
 .visible {
@@ -1020,6 +1061,10 @@ html, body {
   width: 12rem;
 }
 
+.w-56 {
+  width: 14rem;
+}
+
 .w-6 {
   width: 1.5rem;
 }
@@ -1038,6 +1083,18 @@ html, body {
 
 .w-full {
   width: 100%;
+}
+
+.max-w-\[30vw\] {
+  max-width: 30vw;
+}
+
+.max-w-\[40vw\] {
+  max-width: 40vw;
+}
+
+.max-w-\[55vw\] {
+  max-width: 55vw;
 }
 
 .max-w-lg {
@@ -1168,6 +1225,10 @@ html, body {
   margin-bottom: calc(2rem * var(--tw-space-y-reverse));
 }
 
+.overflow-x-auto {
+  overflow-x: auto;
+}
+
 .border {
   border-width: 1px;
 }
@@ -1248,6 +1309,10 @@ html, body {
 
 .pb-0 {
   padding-bottom: 0px;
+}
+
+.pb-32 {
+  padding-bottom: 8rem;
 }
 
 .pl-8 {
@@ -1479,6 +1544,10 @@ html, body {
   transition-timing-function: cubic-bezier(0, 0, 0.2, 1);
 }
 
+.will-change-transform {
+  will-change: transform;
+}
+
 .content-\[\'\'\] {
   --tw-content: '';
   content: var(--tw-content);
@@ -1507,55 +1576,6 @@ html, body {
   font-weight: 440;
 }
 
-main {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100vh;
-  z-index: 0;
-}
-
-.scroll-container {
-  opacity: 0;
-  position: absolute;
-  width: 100%;
-  top: 0;
-  left: 0;
-  will-change: transform;
-}
-
-.scroll-content section {
-  padding-bottom: 8rem;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.scroll-content section figure {
-  max-width: 40vw;
-}
-
-.scroll-content section figure.l {
-  max-width: 55vw;
-}
-
-.scroll-content section figure.s {
-  max-width: 30vw;
-}
-
-.scroll-content section figure.r {
-  margin-left: auto;
-}
-
-figure img {
-  width: 100%;
-}
-
-figure figcaption {
-  padding: 3rem;
-}
-
 .hover\:text-neutral-500:hover {
   --tw-text-opacity: 1;
   color: rgb(115 115 115 / var(--tw-text-opacity, 1));
@@ -1567,6 +1587,11 @@ figure figcaption {
 }
 
 @media (min-width: 768px) {
+  .md\:my-12 {
+    margin-top: 3rem;
+    margin-bottom: 3rem;
+  }
+
   .md\:h-\[480px\] {
     height: 480px;
   }
@@ -1587,5 +1612,11 @@ figure figcaption {
   .md\:py-12 {
     padding-top: 3rem;
     padding-bottom: 3rem;
+  }
+}
+
+@media (min-width: 1280px) {
+  .xl\:w-56 {
+    width: 14rem;
   }
 }

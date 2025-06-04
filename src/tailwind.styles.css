@@ -22,18 +22,20 @@
 
     html {
         font-family: "Uncut Sans Variable", sans-serif;
+        @apply h-full;
+        -ms-overflow-style: none;
+        scrollbar-width: none;
+    }
+
+    body {
+        @apply bg-black text-neutral-100 min-h-screen antialiased h-full;
+        overscroll-behavior: none;
+        -ms-overflow-style: none;
+        scrollbar-width: none;
     }
 
     img, video {
         @apply max-w-none h-auto;
-    }
-    html, body {
-        @apply h-full;
-    }
-
-    body {
-        @apply bg-black text-neutral-100 min-h-screen antialiased;
-        overscroll-behavior: none;
     }
 
     a {
@@ -42,11 +44,6 @@
 
     ::-webkit-scrollbar {
         display: none;
-    }
-
-    html, body {
-        -ms-overflow-style: none;
-        scrollbar-width: none;
     }
 }
 
@@ -77,9 +74,8 @@
     }
 
     .loading-animation {
-        @apply w-40 md:w-48 xl:w-56;
+        @apply w-40 md:w-48 xl:w-56 opacity-90;
         height: auto;
-        opacity: 0.9;
         image-rendering: pixelated;
     }
 
@@ -105,11 +101,7 @@
     }
     
     .work-images {
-        @apply px-8 md:px-12;
-        @apply h-[48vw] md:h-[480px] my-8 md:my-12;
-        @apply w-[100vw];
-        @apply flex flex-nowrap overflow-x-auto;
-        @apply relative;
+        @apply px-8 md:px-12 h-[48vw] md:h-[480px] my-8 md:my-12 w-[100vw] flex flex-nowrap overflow-x-auto relative;
     }
 
     .work-description {
@@ -151,55 +143,41 @@
     .project-meta-value {
         @apply text-neutral-800 font-medium;
     }
-}
 
-main {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100vh;
-    z-index: 0;
-  }
-  
-  .scroll-container {
-    opacity: 0;
-    position: absolute;
-    width: 100%;
-    top: 0;
-    left: 0;
-    will-change: transform;
-  }
-  
-  .scroll-content section {
-    padding-bottom: 8rem;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  }
-  
-  .scroll-content section figure {
-    max-width: 40vw;
-  }
-  
-  .scroll-content section figure.l {
-    max-width: 55vw;
-  }
-  
-  
-  .scroll-content section figure.s {
-    max-width: 30vw;
-  }
-  
-  
-  .scroll-content section figure.r {
-    margin-left: auto;
-  }
-  
-  figure img {
-    width: 100%;
-  }
-  
-figure figcaption {
-    @apply p-12;
+    main {
+        @apply fixed top-0 left-0 w-full h-screen z-0;
+    }
+    
+    .scroll-container {
+        @apply opacity-0 absolute w-full top-0 left-0;
+        will-change: transform;
+    }
+    
+    .scroll-content section {
+        @apply pb-32 flex justify-between items-center;
+    }
+    
+    .scroll-content section figure {
+        @apply max-w-[40vw];
+    }
+    
+    .scroll-content section figure.l {
+        @apply max-w-[55vw];
+    }
+    
+    .scroll-content section figure.s {
+        @apply max-w-[30vw];
+    }
+    
+    .scroll-content section figure.r {
+        @apply ml-auto;
+    }
+    
+    figure img {
+        @apply w-full;
+    }
+    
+    figure figcaption {
+        @apply p-12 md:max-w-xl;
+    }
 }
