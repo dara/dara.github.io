@@ -8,7 +8,7 @@
 }
 
 * {
-    @apply font-medium;
+    @apply font-[440];
 }
 
 @layer base {
@@ -32,7 +32,21 @@
     }
 
     body {
-        @apply bg-white text-neutral-700 min-h-screen antialiased;
+        @apply bg-black text-neutral-100 min-h-screen antialiased;
+        overscroll-behavior: none;
+    }
+
+    a {
+        @apply hover:text-neutral-500 transition-colors duration-300;
+    }
+
+    ::-webkit-scrollbar {
+        display: none;
+    }
+
+    html, body {
+        -ms-overflow-style: none;
+        scrollbar-width: none;
     }
 }
 
@@ -87,7 +101,7 @@
     }
 
     .work-container {
-        @apply py-8 md:py-12 border-t border-neutral-200 relative;
+        @apply py-8 md:py-12 relative;
     }
     
     .work-images {
@@ -139,6 +153,53 @@
     }
 }
 
-a {
-    @apply underline;
+main {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    z-index: 0;
+  }
+  
+  .scroll-container {
+    opacity: 0;
+    position: absolute;
+    width: 100%;
+    top: 0;
+    left: 0;
+    will-change: transform;
+  }
+  
+  .scroll-content section {
+    padding-bottom: 8rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .scroll-content section figure {
+    max-width: 40vw;
+  }
+  
+  .scroll-content section figure.l {
+    max-width: 55vw;
+  }
+  
+  
+  .scroll-content section figure.s {
+    max-width: 30vw;
+  }
+  
+  
+  .scroll-content section figure.r {
+    margin-left: auto;
+  }
+  
+  figure img {
+    width: 100%;
+  }
+  
+figure figcaption {
+    @apply p-12;
 }

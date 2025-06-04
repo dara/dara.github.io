@@ -47,6 +47,7 @@ document.addEventListener('DOMContentLoaded', function() {
         // Hide loading screen immediately and show content
         loadingScreen.classList.add('hidden');
         fadeElement.classList.add('visible');
+        initScrolling();
         return;
     }
     
@@ -72,6 +73,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 // Show content with fade-in effect
                 setTimeout(() => {
                     fadeElement.classList.add('visible');
+                    initScrolling();
                 }, 300); // Slight delay before showing content after loading screen fades out
             }, 800); // Minimum time to show loading screen
         })
@@ -80,6 +82,77 @@ document.addEventListener('DOMContentLoaded', function() {
             loadingScreen.classList.add('hidden');
             setTimeout(() => {
                 fadeElement.classList.add('visible');
+                initScrolling();
             }, 300);
         });
+});
+
+// Original scrolling implementation
+function initScrolling() {
+    const contentContainer = document.querySelector('.scroll-container');
+    const content = document.querySelector('.scroll-content');
+    
+    if (!contentContainer || !content) {
+        console.warn('Scrolling elements not found');
+        return;
+    }
+    
+    let clonedContent = content.cloneNode(true);
+    contentContainer.appendChild(clonedContent);
+
+    // Set scroll dimensions
+    function init() {
+        document.body.style.height = `${contentContainer.getBoundingClientRect().height}px`;
+    }
+
+    window.addEventListener('resize', init);
+
+    let target = 1;
+
+    function scroll() {
+        target = window.scrollY;
+
+        if(target <= 0){
+            target = (contentContainer.offsetHeight / 2) - 1;
+            window.scrollTo(0, target);
+        } else if( target >= contentContainer.offsetHeight / 2){
+            target = 1;
+            window.scrollTo(0, target);
+        }
+
+        target++;
+        window.scrollTo(0, target);
+        contentContainer.style.transform = `translateY(-${target}px)`;
+        requestAnimationFrame(scroll);
+    }
+
+    // Initialize scrolling
+    init();
+    contentContainer.style.opacity = 1;
+    scroll();
+}
+
+// Copenhagen time display function
+function updateCopenhagenTime() {
+    const now = new Date();
+    const options = {
+        timeZone: 'Europe/Copenhagen',
+        hour12: false,
+        hour: '2-digit',
+        minute: '2-digit',
+        second: '2-digit'
+    };
+    
+    const timeString = now.toLocaleTimeString('en-US', options);
+    const timeElement = document.getElementById('copenhagen-time');
+    
+    if (timeElement) {
+        timeElement.textContent = `GMT+1 ${timeString}`;
+    }
+}
+
+// Update time immediately and then every second
+document.addEventListener('DOMContentLoaded', function() {
+    updateCopenhagenTime();
+    setInterval(updateCopenhagenTime, 1000);
 });
