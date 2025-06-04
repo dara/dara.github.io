@@ -86,12 +86,12 @@
     }
 
     .work-container {
-        @apply py-8 md:py-12 border-b border-neutral-200 relative;
+        @apply py-8 md:py-12 border-t border-neutral-200 relative;
     }
     
     .work-images {
         @apply px-8 md:px-12;
-        @apply h-[48vw] md:h-[480px] mb-8 md:mb-12;
+        @apply h-[48vw] md:h-[480px] my-8 md:my-12;
         @apply w-[100vw];
         @apply flex flex-nowrap overflow-x-auto;
         @apply relative;
