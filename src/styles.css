@@ -720,7 +720,7 @@ a:hover {
 
 @media (min-width: 768px) {
   .work-container {
-    row-gap: 3rem;
+    row-gap: 5rem;
   }
 }
 
@@ -741,6 +741,15 @@ a:hover {
     padding-left: 3rem;
     padding-right: 3rem;
   }
+}
+
+.work-images {
+  opacity: 0;
+  transition: opacity 2s ease-out;
+}
+
+.work-images.show {
+  opacity: 1;
 }
 
 .work-description {
@@ -774,7 +783,7 @@ a:hover {
 
 @media (min-width: 768px) {
   .work-images img:not(:last-child) {
-    margin-right: 4rem;
+    margin-right: 5rem;
   }
 }
 
@@ -787,7 +796,7 @@ a:hover {
 .with-border {
   border-width: 1px;
   --tw-border-opacity: 1;
-  border-color: rgb(229 229 229 / var(--tw-border-opacity, 1));
+  border-color: rgb(38 38 38 / var(--tw-border-opacity, 1));
 }
 
 .work-meta {
@@ -811,6 +820,15 @@ a:hover {
     font-size: 1.125rem;
     line-height: 1.75rem;
   }
+}
+
+.work-meta {
+  opacity: 0;
+  transition: opacity 1.5s var(--ease-out);
+}
+
+.work-meta.show {
+  opacity: 1;
 }
 
 .work-meta-item {
@@ -890,6 +908,21 @@ a:hover {
 
 .scroll-content section > div img {
   width: 100%;
+}
+
+/* Sentence animation styles */
+
+.animated-text .sentence {
+  opacity: 0 !important;
+  transition: opacity 2s var(--ease-in)
+}
+
+.animated-text .sentence.animate {
+  opacity: 1 !important;
+}
+
+.animated-text {
+  display: block;
 }
 
 .visible {
@@ -1020,6 +1053,10 @@ a:hover {
 
 .inline-block {
   display: inline-block;
+}
+
+.inline {
+  display: inline;
 }
 
 .flex {

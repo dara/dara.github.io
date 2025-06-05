@@ -44,10 +44,15 @@ document.addEventListener('DOMContentLoaded', function() {
     }
     
     if (!needsPreloading) {
-        // Hide loading screen immediately and show content
+        // No images to load, hide preloader immediately but still show fade-in animation
         loadingScreen.classList.add('hidden');
-        fadeElement.classList.add('visible');
-        initScrolling();
+        // Small delay to let any cached content settle, then show fade-in
+        setTimeout(() => {
+            fadeElement.classList.add('visible');
+            // Start sentence animation immediately with fade-in
+            animateSentences();
+            initScrolling();
+        }, 100); // Very short delay just for the fade-in effect
         return;
     }
     
@@ -73,6 +78,8 @@ document.addEventListener('DOMContentLoaded', function() {
                 // Show content with fade-in effect
                 setTimeout(() => {
                     fadeElement.classList.add('visible');
+                    // Start sentence animation immediately with fade-in
+                    animateSentences();
                     initScrolling();
                 }, 300); // Slight delay before showing content after loading screen fades out
             }, 800); // Minimum time to show loading screen
@@ -82,6 +89,8 @@ document.addEventListener('DOMContentLoaded', function() {
             loadingScreen.classList.add('hidden');
             setTimeout(() => {
                 fadeElement.classList.add('visible');
+                // Start sentence animation immediately with fade-in
+                animateSentences();
                 initScrolling();
             }, 300);
         });
@@ -148,6 +157,45 @@ function updateCopenhagenTime() {
     
     if (timeElement) {
         timeElement.textContent = `GMT+1 ${timeString}`;
+    }
+}
+
+// Sentence animation function
+function animateSentences() {
+    const sentences = document.querySelectorAll('.sentence');
+    
+    if (sentences.length === 0) return;
+    
+    sentences.forEach((sentence, index) => {
+        setTimeout(() => {
+            sentence.classList.add('animate');
+        }, index * 100);
+    });
+    
+    const totalSentenceDelay = sentences.length * 100 + 700;
+    setTimeout(() => {
+        showWorkImages();
+    }, totalSentenceDelay);
+}
+
+// Work images animation function
+function showWorkImages() {
+    const workImages = document.querySelector('.work-images');
+    
+    if (workImages) {
+        workImages.classList.add('show');
+        setTimeout(() => {
+            showMetadata();
+        }, 100);
+    }
+}
+
+// Metadata animation function
+function showMetadata() {
+    const workMeta = document.querySelector('.work-meta');
+    
+    if (workMeta) {
+        workMeta.classList.add('show');
     }
 }
 
