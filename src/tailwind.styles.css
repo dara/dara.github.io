@@ -129,7 +129,7 @@
     }
 
     .project-meta {
-        @apply mb-6 grid grid-cols-2 gap-x-8 gap-y-4 text-neutral-600;
+        @apply mb-6 grid grid-cols-2 gap-x-8 gap-y-4;
     }
 
     .project-meta-item {
@@ -137,14 +137,10 @@
     }
 
     .project-meta-label {
-        @apply text-neutral-400;
+        @apply text-neutral-600;
     }
 
-    .project-meta-value {
-        @apply text-neutral-800 font-medium;
-    }
-
-    main {
+    .index main {
         @apply fixed top-0 left-0 w-full h-screen z-0;
     }
     
@@ -154,30 +150,26 @@
     }
     
     .scroll-content section {
-        @apply pb-32 flex justify-between items-center;
+        @apply pb-16 md:pb-32 flex justify-between items-center;
     }
     
-    .scroll-content section figure {
-        @apply max-w-[40vw];
+    .scroll-content section > div {
+        @apply max-w-[100vw] md:max-w-[40vw];
     }
     
-    .scroll-content section figure.l {
-        @apply max-w-[55vw];
+    .scroll-content section > div.l {
+        @apply max-w-[100vw] md:max-w-[55vw];
     }
     
-    .scroll-content section figure.s {
-        @apply max-w-[30vw];
+    .scroll-content section > div.s {
+        @apply max-w-[100vw] md:max-w-[30vw];
     }
     
-    .scroll-content section figure.r {
+    .scroll-content section > div.r {
         @apply ml-auto;
     }
     
-    figure img {
+    .scroll-content section > div img {
         @apply w-full;
-    }
-    
-    figure figcaption {
-        @apply p-12 md:max-w-xl;
     }
 }
