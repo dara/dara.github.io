@@ -8,7 +8,6 @@
 }
 
 * {
-    @apply font-[435] md:text-lg;
     line-height: 1.5 !important;
 }
 
@@ -23,13 +22,13 @@
 
     html {
         font-family: "Uncut Sans Variable", sans-serif;
-        @apply h-full;
+        @apply h-full font-[435];
         -ms-overflow-style: none;
         scrollbar-width: none;
     }
 
     body {
-        @apply bg-black text-neutral-100 min-h-screen antialiased h-full;
+        @apply bg-black text-neutral-100 min-h-screen antialiased h-full md:text-xl;
         overscroll-behavior: none;
         -ms-overflow-style: none;
         scrollbar-width: none;
@@ -130,7 +129,7 @@
     }
 
     .work-meta {
-        @apply px-8 md:px-12 grid grid-cols-2 gap-x-8 gap-y-4 pb-8 md:pb-12;
+        @apply px-8 md:px-12 grid grid-cols-4 gap-x-8 gap-y-4 pb-8 md:pb-12 text-sm md:text-lg;
     }
 
     .work-meta-item {
@@ -163,7 +162,7 @@
     }
     
     .scroll-content section > div.s {
-        @apply max-w-[100vw] md:max-w-[30vw];
+        @apply max-w-[100vw] md:max-w-[35vw];
     }
     
     .scroll-content section > div.r {
