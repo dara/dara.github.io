@@ -28,7 +28,7 @@
     }
 
     body {
-        @apply bg-black text-neutral-100 min-h-screen antialiased h-full md:text-xl;
+        @apply bg-black text-neutral-100 min-h-screen antialiased h-full text-lg;
         overscroll-behavior: none;
         -ms-overflow-style: none;
         scrollbar-width: none;
@@ -135,7 +135,7 @@
     }
 
     .work-meta {
-        @apply px-8 md:px-12 grid grid-cols-4 gap-x-8 gap-y-4 pb-8 md:pb-12 text-sm md:text-lg;
+        @apply px-8 md:px-12 grid grid-cols-3 gap-x-8 gap-y-4 pb-8 md:pb-12;
         opacity: 0;
         transition: opacity 1.5s var(--ease-out);
     }
