@@ -702,21 +702,19 @@ a:hover {
 
 .work-container {
   position: relative;
-  padding-top: 2rem;
-  padding-bottom: 2rem;
+  display: flex;
+  flex-direction: column;
+  row-gap: 2rem;
 }
 
 @media (min-width: 768px) {
   .work-container {
-    padding-top: 3rem;
-    padding-bottom: 3rem;
+    row-gap: 3rem;
   }
 }
 
 .work-images {
   position: relative;
-  margin-top: 2rem;
-  margin-bottom: 2rem;
   display: flex;
   height: 48vw;
   width: 100vw;
@@ -728,8 +726,6 @@ a:hover {
 
 @media (min-width: 768px) {
   .work-images {
-    margin-top: 3rem;
-    margin-bottom: 3rem;
     height: 480px;
     padding-left: 3rem;
     padding-right: 3rem;
@@ -737,6 +733,7 @@ a:hover {
 }
 
 .work-description {
+  max-width: 42rem;
   padding-left: 2rem;
   padding-right: 2rem;
 }
@@ -782,23 +779,33 @@ a:hover {
   border-color: rgb(229 229 229 / var(--tw-border-opacity, 1));
 }
 
-.project-meta {
-  margin-bottom: 1.5rem;
+.work-meta {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
   -moz-column-gap: 2rem;
        column-gap: 2rem;
   row-gap: 1rem;
+  padding-left: 2rem;
+  padding-right: 2rem;
+  padding-bottom: 2rem;
 }
 
-.project-meta-item {
+@media (min-width: 768px) {
+  .work-meta {
+    padding-left: 3rem;
+    padding-right: 3rem;
+    padding-bottom: 3rem;
+  }
+}
+
+.work-meta-item {
   display: flex;
   flex-direction: column;
 }
 
-.project-meta-label {
+.work-meta-label {
   --tw-text-opacity: 1;
-  color: rgb(82 82 82 / var(--tw-text-opacity, 1));
+  color: rgb(115 115 115 / var(--tw-text-opacity, 1));
 }
 
 .index main {
@@ -1091,6 +1098,10 @@ a:hover {
   width: 100%;
 }
 
+.max-w-2xl {
+  max-width: 42rem;
+}
+
 .max-w-\[100vw\] {
   max-width: 100vw;
 }
@@ -1209,6 +1220,10 @@ a:hover {
   row-gap: 1rem;
 }
 
+.gap-y-8 {
+  row-gap: 2rem;
+}
+
 .space-x-5 > :not([hidden]) ~ :not([hidden]) {
   --tw-space-x-reverse: 0;
   margin-right: calc(1.25rem * var(--tw-space-x-reverse));
@@ -1321,6 +1336,10 @@ a:hover {
   padding-bottom: 8rem;
 }
 
+.pb-8 {
+  padding-bottom: 2rem;
+}
+
 .pl-8 {
   padding-left: 2rem;
 }
@@ -1407,8 +1426,8 @@ a:hover {
   line-height: 1rem;
 }
 
-.font-\[440\] {
-  font-weight: 440;
+.font-\[435\] {
+  font-weight: 435;
 }
 
 .font-light {
@@ -1429,6 +1448,18 @@ a:hover {
 
 .leading-loose {
   line-height: 2;
+}
+
+.leading-normal {
+  line-height: 1.5;
+}
+
+.leading-relaxed {
+  line-height: 1.625;
+}
+
+.leading-snug {
+  line-height: 1.375;
 }
 
 .leading-tight {
@@ -1570,7 +1601,7 @@ a:hover {
 
 .text-secondary {
   --tw-text-opacity: 1;
-  color: rgb(82 82 82 / var(--tw-text-opacity, 1));
+  color: rgb(115 115 115 / var(--tw-text-opacity, 1));
 }
 
 :root {
@@ -1579,7 +1610,18 @@ a:hover {
 }
 
 * {
-  font-weight: 440;
+  font-weight: 435;
+}
+
+@media (min-width: 768px) {
+  * {
+    font-size: 1.125rem;
+    line-height: 1.75rem;
+  }
+}
+
+* {
+  line-height: 1.5 !important;
 }
 
 .hover\:text-neutral-500:hover {
@@ -1587,17 +1629,7 @@ a:hover {
   color: rgb(115 115 115 / var(--tw-text-opacity, 1));
 }
 
-.hover\:text-neutral-900:hover {
-  --tw-text-opacity: 1;
-  color: rgb(23 23 23 / var(--tw-text-opacity, 1));
-}
-
 @media (min-width: 768px) {
-  .md\:my-12 {
-    margin-top: 3rem;
-    margin-bottom: 3rem;
-  }
-
   .md\:h-\[480px\] {
     height: 480px;
   }
@@ -1631,18 +1663,8 @@ a:hover {
     padding-right: 3rem;
   }
 
-  .md\:py-12 {
-    padding-top: 3rem;
-    padding-bottom: 3rem;
-  }
-
   .md\:pb-32 {
     padding-bottom: 8rem;
-  }
-
-  .md\:text-xl {
-    font-size: 1.25rem;
-    line-height: 1.75rem;
   }
 }
 

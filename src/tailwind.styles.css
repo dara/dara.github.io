@@ -8,7 +8,8 @@
 }
 
 * {
-    @apply font-[440];
+    @apply font-[435] md:text-lg;
+    line-height: 1.5 !important;
 }
 
 @layer base {
@@ -58,7 +59,7 @@
     }
 
     .text-secondary {
-        @apply text-neutral-600;
+        @apply text-neutral-500;
     }
 }
 
@@ -97,15 +98,15 @@
     }
 
     .work-container {
-        @apply py-8 md:py-12 relative;
+        @apply relative flex flex-col gap-y-8 md:gap-y-12;
     }
     
     .work-images {
-        @apply px-8 md:px-12 h-[48vw] md:h-[480px] my-8 md:my-12 w-[100vw] flex flex-nowrap overflow-x-auto relative;
+        @apply px-8 md:px-12 h-[48vw] md:h-[480px] w-[100vw] flex flex-nowrap overflow-x-auto relative;
     }
 
     .work-description {
-        @apply px-8 md:px-12;
+        @apply px-8 md:px-12 max-w-2xl;
     }
 
     .work-images::after {
@@ -128,16 +129,16 @@
         @apply border border-neutral-200;
     }
 
-    .project-meta {
-        @apply mb-6 grid grid-cols-2 gap-x-8 gap-y-4;
+    .work-meta {
+        @apply px-8 md:px-12 grid grid-cols-2 gap-x-8 gap-y-4 pb-8 md:pb-12;
     }
 
-    .project-meta-item {
+    .work-meta-item {
         @apply flex flex-col;
     }
 
-    .project-meta-label {
-        @apply text-neutral-600;
+    .work-meta-label {
+        @apply text-secondary;
     }
 
     .index main {
