@@ -34,7 +34,7 @@
         scrollbar-width: none;
     }
 
-    img, video {
+    img, iframe, video {
         @apply max-w-none h-auto;
     }
 
@@ -118,11 +118,17 @@
         @apply content-[''] block flex-none w-[1px];
     }
 
-    .work-images img {
+    .work-images img, .work-images iframe {
         @apply h-auto;
     }
 
-    .work-images img:not(:last-child) {
+    .work-images iframe {
+        @apply aspect-[1512/982];
+        border: none;
+        flex-shrink: 0;
+    }
+
+    .work-images img:not(:last-child), .work-images iframe:not(:last-child) {
         @apply mr-8 md:mr-20;
     }
 
