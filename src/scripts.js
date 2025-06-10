@@ -85,7 +85,7 @@ document.addEventListener('DOMContentLoaded', function() {
         setTimeout(() => {
             fadeElement.classList.add('visible');
             // Start sentence animation immediately with fade-in
-            animateSentences();
+            animateRevealables();
             // Only initialize scrolling on desktop
             if (!isMobile()) {
                 initScrolling();
@@ -120,7 +120,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 setTimeout(() => {
                     fadeElement.classList.add('visible');
                     // Start sentence animation immediately with fade-in
-                    animateSentences();
+                    animateRevealables();
                     // Only initialize scrolling on desktop
                     if (!isMobile()) {
                         initScrolling();
@@ -137,7 +137,7 @@ document.addEventListener('DOMContentLoaded', function() {
             setTimeout(() => {
                 fadeElement.classList.add('visible');
                 // Start sentence animation immediately with fade-in
-                animateSentences();
+                animateRevealables();
                 // Only initialize scrolling on desktop
                 if (!isMobile()) {
                     initScrolling();
@@ -229,22 +229,22 @@ function updateCopenhagenTime() {
     }
 }
 
-// Sentence animation function
-function animateSentences() {
-    const sentences = document.querySelectorAll('.sentence');
+// Revealable animation function
+function animateRevealables() {
+    const revealables = document.querySelectorAll('.revealable');
     
-    if (sentences.length === 0) return;
+    if (revealables.length === 0) return;
     
-    sentences.forEach((sentence, index) => {
+    revealables.forEach((revealable, index) => {
         setTimeout(() => {
-            sentence.classList.add('animate');
+            revealable.classList.add('animate');
         }, index * 100);
     });
     
-    const totalSentenceDelay = sentences.length * 100 + 700;
+    const totalRevealableDelay = revealables.length * 100 + 700;
     setTimeout(() => {
         showWorkImages();
-    }, totalSentenceDelay);
+    }, totalRevealableDelay);
 }
 
 // Work images animation function

@@ -204,12 +204,12 @@
     }
 
     /* Sentence animation styles */
-    .animated-text .sentence {
+    .animated-text .revealable {
         opacity: 0 !important;
         transition: opacity 2s var(--ease-in),
     }
 
-    .animated-text .sentence.animate {
+    .animated-text .revealable.animate {
         opacity: 1 !important;
     }
 
