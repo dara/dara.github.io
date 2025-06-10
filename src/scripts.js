@@ -19,6 +19,41 @@ document.addEventListener('DOMContentLoaded', function() {
     // Update the --vh variable on orientation change
     window.addEventListener('orientationchange', setVHVariable);
     
+    // Function to check if device is mobile
+    function isMobile() {
+        return window.innerWidth <= 768 || /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+    }
+    
+    // Handle responsive view changes
+    let isCurrentlyMobile = isMobile();
+    let isScrollingInitialized = false;
+    
+    function handleViewChange() {
+        const newMobileState = isMobile();
+        
+        if (newMobileState !== isCurrentlyMobile) {
+            isCurrentlyMobile = newMobileState;
+            
+            if (isCurrentlyMobile && isScrollingInitialized) {
+                // Switch to mobile view - stop scrolling
+                document.body.style.height = 'auto';
+                const contentContainer = document.querySelector('.scroll-container');
+                if (contentContainer) {
+                    contentContainer.style.transform = 'none';
+                }
+                isScrollingInitialized = false;
+            } else if (!isCurrentlyMobile && !isScrollingInitialized) {
+                // Switch to desktop view - start scrolling
+                initScrolling();
+                isScrollingInitialized = true;
+            }
+        }
+    }
+    
+    // Listen for resize events to handle responsive changes
+    window.addEventListener('resize', handleViewChange);
+    window.addEventListener('orientationchange', handleViewChange);
+    
     // Function to check if an image is cached
     function isImageCached(img) {
         return img.complete && img.naturalHeight !== 0;
@@ -51,7 +86,13 @@ document.addEventListener('DOMContentLoaded', function() {
             fadeElement.classList.add('visible');
             // Start sentence animation immediately with fade-in
             animateSentences();
-            initScrolling();
+            // Only initialize scrolling on desktop
+            if (!isMobile()) {
+                initScrolling();
+                isScrollingInitialized = true;
+            } else {
+                initMobileView();
+            }
         }, 100); // Very short delay just for the fade-in effect
         return;
     }
@@ -80,7 +121,13 @@ document.addEventListener('DOMContentLoaded', function() {
                     fadeElement.classList.add('visible');
                     // Start sentence animation immediately with fade-in
                     animateSentences();
-                    initScrolling();
+                    // Only initialize scrolling on desktop
+                    if (!isMobile()) {
+                        initScrolling();
+                        isScrollingInitialized = true;
+                    } else {
+                        initMobileView();
+                    }
                 }, 300); // Slight delay before showing content after loading screen fades out
             }, 800); // Minimum time to show loading screen
         })
@@ -91,10 +138,32 @@ document.addEventListener('DOMContentLoaded', function() {
                 fadeElement.classList.add('visible');
                 // Start sentence animation immediately with fade-in
                 animateSentences();
-                initScrolling();
+                // Only initialize scrolling on desktop
+                if (!isMobile()) {
+                    initScrolling();
+                    isScrollingInitialized = true;
+                } else {
+                    initMobileView();
+                }
             }, 300);
         });
 });
+
+// Mobile view initialization - static content without scrolling animation
+function initMobileView() {
+    const contentContainer = document.querySelector('.scroll-container');
+    
+    if (!contentContainer) {
+        console.warn('Scrolling elements not found');
+        return;
+    }
+    
+    // Make content visible without animation
+    contentContainer.style.opacity = 1;
+    
+    // Reset body height to auto for normal scrolling
+    document.body.style.height = 'auto';
+}
 
 // Original scrolling implementation
 function initScrolling() {

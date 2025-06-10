@@ -28,7 +28,7 @@
     }
 
     body {
-        @apply bg-black text-neutral-200 min-h-screen antialiased h-full text-lg;
+        @apply bg-black text-neutral-200 min-h-screen antialiased h-full text-base md:text-lg;
         overscroll-behavior: none;
         -ms-overflow-style: none;
         scrollbar-width: none;
@@ -160,6 +160,18 @@
 
     .index main {
         @apply fixed top-0 left-0 w-full h-screen z-0;
+    }
+    
+    /* Mobile styles for static content display */
+    @media (max-width: 768px) {
+        .index main {
+            @apply static h-auto;
+        }
+        
+        .scroll-container {
+            @apply static;
+            transform: none !important;
+        }
     }
     
     .scroll-container {
