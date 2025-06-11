@@ -594,6 +594,13 @@ body {
   }
 }
 
+@media (min-width: 1280px) {
+  body {
+    font-size: 1.25rem;
+    line-height: 1.75rem;
+  }
+}
+
 body {
   overscroll-behavior: none;
   -ms-overflow-style: none;
@@ -1844,6 +1851,11 @@ a:hover {
 
   .md\:pb-32 {
     padding-bottom: 8rem;
+  }
+
+  .md\:text-lg {
+    font-size: 1.125rem;
+    line-height: 1.75rem;
   }
 }
 

@@ -28,7 +28,7 @@
     }
 
     body {
-        @apply bg-black text-neutral-200 min-h-screen antialiased h-full text-base md:text-lg;
+        @apply bg-black text-neutral-200 min-h-screen antialiased h-full text-base md:text-lg xl:text-xl;
         overscroll-behavior: none;
         -ms-overflow-style: none;
         scrollbar-width: none;
