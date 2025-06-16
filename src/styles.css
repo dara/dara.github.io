@@ -848,11 +848,8 @@ a:hover {
 }
 
 .index main {
-  position: fixed;
-  top: 0px;
-  left: 0px;
-  z-index: 0;
-  height: 100vh;
+  position: relative;
+  min-height: 100vh;
   width: 100%;
 }
 
@@ -864,22 +861,20 @@ a:hover {
     height: auto;
   }
 
-  .scroll-container {
-    position: static;
-    transform: none !important;
+  body {
+    cursor: auto !important;
+  }
+
+  .custom-cursor {
+    display: none;
   }
 }
 
-.scroll-container {
-  position: absolute;
-  top: 0px;
-  left: 0px;
+.works {
   width: 100%;
-  opacity: 0;
-  will-change: transform;
 }
 
-.scroll-content section {
+.works section {
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -887,46 +882,46 @@ a:hover {
 }
 
 @media (min-width: 768px) {
-  .scroll-content section {
+  .works section {
     padding-bottom: 8rem;
   }
 }
 
-.scroll-content section > div {
+.works section > div {
   max-width: 100vw;
 }
 
 @media (min-width: 768px) {
-  .scroll-content section > div {
+  .works section > div {
     max-width: 40vw;
   }
 }
 
-.scroll-content section > div.l {
+.works section > div.l {
   max-width: 100vw;
 }
 
 @media (min-width: 768px) {
-  .scroll-content section > div.l {
+  .works section > div.l {
     max-width: 55vw;
   }
 }
 
-.scroll-content section > div.s {
+.works section > div.s {
   max-width: 100vw;
 }
 
 @media (min-width: 768px) {
-  .scroll-content section > div.s {
+  .works section > div.s {
     max-width: 35vw;
   }
 }
 
-.scroll-content section > div.r {
+.works section > div.r {
   margin-left: auto;
 }
 
-.scroll-content section > div img {
+.works section > div img {
   width: 100%;
 }
 
@@ -1730,6 +1725,11 @@ a:hover {
   filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow);
 }
 
+.backdrop-filter {
+  -webkit-backdrop-filter: var(--tw-backdrop-blur) var(--tw-backdrop-brightness) var(--tw-backdrop-contrast) var(--tw-backdrop-grayscale) var(--tw-backdrop-hue-rotate) var(--tw-backdrop-invert) var(--tw-backdrop-opacity) var(--tw-backdrop-saturate) var(--tw-backdrop-sepia);
+  backdrop-filter: var(--tw-backdrop-blur) var(--tw-backdrop-brightness) var(--tw-backdrop-contrast) var(--tw-backdrop-grayscale) var(--tw-backdrop-hue-rotate) var(--tw-backdrop-invert) var(--tw-backdrop-opacity) var(--tw-backdrop-saturate) var(--tw-backdrop-sepia);
+}
+
 .transition {
   transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, -webkit-backdrop-filter;
   transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter;
@@ -1792,18 +1792,6 @@ a:hover {
 @media (min-width: 768px) {
   .md\:fixed {
     position: fixed;
-  }
-
-  .md\:absolute {
-    position: absolute;
-  }
-
-  .md\:left-0 {
-    left: 0px;
-  }
-
-  .md\:top-0 {
-    top: 0px;
   }
 
   .md\:h-\[480px\] {
