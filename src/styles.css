@@ -746,9 +746,9 @@ a:hover {
 
 @media (min-width: 768px) {
   .work-images {
-    height: 480px;
-    padding-left: 3rem;
-    padding-right: 3rem;
+    height: 640px;
+    padding-left: 4rem;
+    padding-right: 4rem;
   }
 }
 
@@ -769,8 +769,8 @@ a:hover {
 
 @media (min-width: 768px) {
   .work-description {
-    padding-left: 3rem;
-    padding-right: 3rem;
+    padding-left: 4rem;
+    padding-right: 4rem;
   }
 }
 
@@ -822,8 +822,8 @@ a:hover {
 @media (min-width: 768px) {
   .work-meta {
     grid-template-columns: repeat(3, minmax(0, 1fr));
-    padding-left: 3rem;
-    padding-right: 3rem;
+    padding-left: 4rem;
+    padding-right: 4rem;
     padding-bottom: 3rem;
   }
 }
@@ -1457,6 +1457,11 @@ a:hover {
   padding-right: 3rem;
 }
 
+.px-16 {
+  padding-left: 4rem;
+  padding-right: 4rem;
+}
+
 .px-6 {
   padding-left: 1.5rem;
   padding-right: 1.5rem;
@@ -1470,6 +1475,11 @@ a:hover {
 .py-12 {
   padding-top: 3rem;
   padding-bottom: 3rem;
+}
+
+.py-6 {
+  padding-top: 1.5rem;
+  padding-bottom: 1.5rem;
 }
 
 .py-8 {
@@ -1523,6 +1533,10 @@ a:hover {
 
 .pr-8 {
   padding-right: 2rem;
+}
+
+.pt-16 {
+  padding-top: 4rem;
 }
 
 .pt-24 {
@@ -1794,8 +1808,8 @@ a:hover {
     position: fixed;
   }
 
-  .md\:h-\[480px\] {
-    height: 480px;
+  .md\:h-\[640px\] {
+    height: 640px;
   }
 
   .md\:w-48 {
@@ -1822,13 +1836,18 @@ a:hover {
     grid-template-columns: repeat(3, minmax(0, 1fr));
   }
 
-  .md\:p-12 {
-    padding: 3rem;
+  .md\:p-16 {
+    padding: 4rem;
   }
 
   .md\:px-12 {
     padding-left: 3rem;
     padding-right: 3rem;
+  }
+
+  .md\:px-16 {
+    padding-left: 4rem;
+    padding-right: 4rem;
   }
 
   .md\:pb-32 {
