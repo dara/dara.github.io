@@ -607,7 +607,7 @@ body {
   scrollbar-width: none;
 }
 
-img, iframe, video {
+img, video {
   height: auto;
   max-width: none;
 }
@@ -782,22 +782,16 @@ a:hover {
   content: var(--tw-content);
 }
 
-.work-images img, .work-images iframe {
+.work-images img {
   height: auto;
 }
 
-.work-images iframe {
-  aspect-ratio: 1512/982;
-  border: none;
-  flex-shrink: 0;
-}
-
-.work-images img:not(:last-child), .work-images iframe:not(:last-child) {
+.work-images img:not(:last-child) {
   margin-right: 1.5rem;
 }
 
 @media (min-width: 768px) {
-  .work-images img:not(:last-child), .work-images iframe:not(:last-child) {
+  .work-images img:not(:last-child) {
     margin-right: 5rem;
   }
 }
