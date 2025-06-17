@@ -180,15 +180,11 @@
     }
     
     .works section > div {
-        @apply max-w-[100vw] md:max-w-[40vw];
-    }
-    
-    .works section > div.l {
-        @apply max-w-[100vw] md:max-w-[55vw];
+        @apply max-w-[100vw] md:max-w-[50vw];
     }
     
     .works section > div.s {
-        @apply max-w-[100vw] md:max-w-[35vw];
+        @apply max-w-[100vw] md:max-w-[30vw];
     }
     
     .works section > div.r {
