@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Neol ID Generator</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <div class="shape-container">
+      <svg id="shape" width="400" height="400" viewBox="0 0 400 400"></svg>
+    </div>
+    
+    <div class="controls">
+      <div class="control-group">
+        <div class="control-label">Experience</div>
+        <div class="slider-container">
+          <input type="range" class="slider" id="m" min="3" max="12" value="4">
+          <span class="slider-value" id="m-value">4</span>
+        </div>
+      </div>
+
+      <div class="control-group">
+        <div class="control-label">Network size</div>
+        <div class="slider-container">
+          <input type="range" class="slider" id="n2" min="0.1" max="10" step="0.1" value="1">
+          <span class="slider-value" id="n2-value">1</span>
+        </div>
+      </div>
+
+      <div class="control-group">
+        <div class="control-label">Centrality</div>
+        <div class="slider-container">
+          <input type="range" class="slider" id="n3" min="0.1" max="10" step="0.1" value="8">
+          <span class="slider-value" id="n3-value">8</span>
+        </div>
+      </div>
+
+      <div class="control-group">
+        <div class="control-label">Vibrancy</div>
+        <div class="slider-container">
+          <input type="range" class="slider" id="n1" min="0.1" max="10" step="0.1" value="0.3">
+          <span class="slider-value" id="n1-value">0.3</span>
+        </div>
+      </div>
+
+      <div class="control-group">
+        <div class="control-label">Fisher vs Hunter</div>
+        <div class="slider-container">
+          <input type="range" class="slider" id="fisher" min="0" max="10" step="0.1" value="2">
+          <span class="slider-value" id="fisher-value">2</span>
+        </div>
+      </div>
+
+      <div class="control-group">
+        <div class="control-label">Magic constant</div>
+        <div class="slider-container">
+          <input type="range" class="slider" id="magic" min="0.1" max="5" step="0.1" value="1.5">
+          <span class="slider-value" id="magic-value">1.5</span>
+        </div>
+      </div>
+    </div>
+
+
+  </div>
+
+<script>
+function superformula(theta, m, n1, n2, n3, a=1, b=1) {
+  // See https://en.wikipedia.org/wiki/Superformula
+  return Math.pow(
+    Math.pow(Math.abs(Math.cos(m * theta / 4) / a), n2) +
+    Math.pow(Math.abs(Math.sin(m * theta / 4) / b), n3),
+    -1 / n1
+  );
+}
+
+function updateSliderFill(slider) {
+  const value = slider.value;
+  const min = slider.min;
+  const max = slider.max;
+  const percentage = ((value - min) / (max - min)) * 100;
+  slider.style.setProperty('--fill-width', percentage + '%');
+}
+
+function randomizeShape() {
+  // Generate random values within each slider's range
+  const randomValues = {
+    m: Math.floor(Math.random() * (12 - 3 + 1)) + 3, // 3-12 (integer)
+    n1: Math.round((Math.random() * (10 - 0.1) + 0.1) * 10) / 10, // 0.1-10 (1 decimal)
+    n2: Math.round((Math.random() * (10 - 0.1) + 0.1) * 10) / 10, // 0.1-10 (1 decimal)
+    n3: Math.round((Math.random() * (10 - 0.1) + 0.1) * 10) / 10, // 0.1-10 (1 decimal)
+    fisher: Math.round((Math.random() * (10 - 0) + 0) * 10) / 10, // 0-10 (1 decimal)
+    magic: Math.round((Math.random() * (5 - 0.1) + 0.1) * 10) / 10 // 0.1-5 (1 decimal)
+  };
+
+  // Set the random values to the sliders
+  Object.keys(randomValues).forEach(id => {
+    const slider = document.getElementById(id);
+    if (slider) {
+      slider.value = randomValues[id];
+    }
+  });
+}
+
+function updateLabels() {
+  document.getElementById('m-value').textContent = document.getElementById('m').value;
+  document.getElementById('n1-value').textContent = document.getElementById('n1').value;
+  document.getElementById('n2-value').textContent = document.getElementById('n2').value;
+  document.getElementById('n3-value').textContent = document.getElementById('n3').value;
+  document.getElementById('fisher-value').textContent = document.getElementById('fisher').value;
+  document.getElementById('magic-value').textContent = document.getElementById('magic').value;
+
+  // Update slider fills
+  document.querySelectorAll('.slider').forEach(updateSliderFill);
+}
+
+function getGradientFromMagic(magicValue) {
+  // Map magic constant (0.1 to 5) to different gradient combinations
+  const normalizedValue = (magicValue - 0.1) / (5 - 0.1);
+  
+  // Create gradient combinations based on magic value
+  const gradients = [
+    ['#ff6b6b', '#4ecdc4'], // Red to Cyan
+    ['#a8e6cf', '#ff8b94'], // Green to Pink
+    ['#ffd93d', '#6bcf7f'], // Yellow to Green
+    ['#74b9ff', '#fd79a8'], // Blue to Pink
+    ['#e17055', '#fdcb6e'], // Orange to Yellow
+    ['#a29bfe', '#fd79a8'], // Purple to Pink
+    ['#00b894', '#00cec9'], // Teal to Cyan
+    ['#e84393', '#f39c12'], // Pink to Orange
+    ['#6c5ce7', '#a29bfe'], // Purple to Light Purple
+    ['#00b894', '#55a3ff']  // Teal to Blue
+  ];
+  
+  // Select gradient based on magic value
+  const gradientIndex = Math.floor(normalizedValue * (gradients.length - 1));
+  const [color1, color2] = gradients[gradientIndex];
+  
+  // Create gradient ID
+  const gradientId = `gradient-${gradientIndex}`;
+  
+  return { gradientId, color1, color2 };
+}
+
+function draw() {
+  updateLabels();
+  const svg = document.getElementById('shape');
+  const m = Number(document.getElementById('m').value);
+  const n1 = Number(document.getElementById('n1').value);
+  const n2 = Number(document.getElementById('n2').value);
+  const n3 = Number(document.getElementById('n3').value);
+  const magicValue = Number(document.getElementById('magic').value);
+  const { gradientId, color1, color2 } = getGradientFromMagic(magicValue);
+  const points = [];
+  const steps = 360;
+  const center = 200;
+  const padding = 10;
+
+  // Find the max r value for this config
+  let maxR = 0;
+  for (let i = 0; i <= steps; i++) {
+    const theta = (i / steps) * 2 * Math.PI;
+    const r = superformula(theta, m, n1, n2, n3);
+    if (r > maxR) maxR = r;
+  }
+
+  // Calculate scale so shape fits within SVG with padding
+  const scale = (center - padding) / maxR;
+
+  // Draw the scaled shape
+  for (let i = 0; i <= steps; i++) {
+    const theta = (i / steps) * 2 * Math.PI;
+    const r = superformula(theta, m, n1, n2, n3);
+    const x = center + scale * r * Math.cos(theta);
+    const y = center + scale * r * Math.sin(theta);
+    points.push(`${x},${y}`);
+  }
+  
+  // Create SVG with gradient definition
+  svg.innerHTML = `
+    <defs>
+      <linearGradient id="${gradientId}" x1="0%" y1="0%" x2="100%" y2="100%">
+        <stop offset="0%" style="stop-color:${color1};stop-opacity:1" />
+        <stop offset="100%" style="stop-color:${color2};stop-opacity:1" />
+      </linearGradient>
+    </defs>
+    <polygon points="${points.join(' ')}" fill="url(#${gradientId})" opacity="0.9"/>
+  `;
+}
+
+document.querySelectorAll('.controls input').forEach(input => {
+  input.addEventListener('input', draw);
+});
+
+// Randomize shape on load
+randomizeShape();
+
+// Initialize slider fills
+document.querySelectorAll('.slider').forEach(updateSliderFill);
+
+draw();
+</script>
+</body>
+</html>
