@@ -133,9 +133,6 @@
         body {
             cursor: auto !important;
         }
-        .custom-cursor {
-            display: none;
-        }
     }
     
     .works {
@@ -143,14 +140,10 @@
     }
     
     .works section {
-        @apply pb-16 md:pb-32 flex justify-between items-center opacity-0;
+        @apply pb-16 md:pb-32 flex justify-between items-center;
         transition: opacity 1.2s cubic-bezier(0.4, 0, 0.2, 1);
     }
 
-    .works section.animate {
-        @apply opacity-100;
-    }
-    
     .works section > div {
         @apply max-w-[100vw] md:max-w-[50vw];
     }

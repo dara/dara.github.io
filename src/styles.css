@@ -805,10 +805,6 @@ a:hover {
   body {
     cursor: auto !important;
   }
-
-  .custom-cursor {
-    display: none;
-  }
 }
 
 .works {
@@ -820,7 +816,6 @@ a:hover {
   align-items: center;
   justify-content: space-between;
   padding-bottom: 4rem;
-  opacity: 0;
 }
 
 @media (min-width: 768px) {
@@ -831,10 +826,6 @@ a:hover {
 
 .works section {
   transition: opacity 1.2s cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-.works section.animate {
-  opacity: 1;
 }
 
 .works section > div {
