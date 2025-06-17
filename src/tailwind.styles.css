@@ -173,4 +173,28 @@
     .animated-text {
         @apply block;
     }
+
+    /* Preloader styles */
+    .preloader {
+        @apply fixed inset-0 bg-black flex items-center justify-center z-50;
+        transition: opacity 0.8s var(--ease-out), visibility 0.8s var(--ease-out);
+    }
+
+    .preloader.fade-out {
+        @apply opacity-0 invisible;
+    }
+
+    .main-content {
+        @apply opacity-0;
+        transition: opacity 1s var(--ease-out);
+    }
+
+    .main-content.loaded {
+        @apply opacity-100;
+    }
+
+    @keyframes spin {
+        0% { transform: rotate(0deg); }
+        100% { transform: rotate(360deg); }
+    }
 }
