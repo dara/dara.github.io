@@ -661,65 +661,6 @@ a:hover {
   }
 }
 
-#loading-screen {
-  position: fixed;
-  inset: 0px;
-  z-index: 50;
-  display: flex;
-  height: 100vh;
-  width: 100%;
-  align-items: center;
-  justify-content: center;
-  --tw-bg-opacity: 1;
-  background-color: rgb(255 255 255 / var(--tw-bg-opacity, 1));
-  height: calc(var(--vh, 1vh) * 100);
-  transition: opacity 0.8s var(--ease-out);
-}
-
-.loader-content {
-  text-align: center;
-}
-
-.loading-animation {
-  width: 10rem;
-  opacity: 0.9;
-}
-
-@media (min-width: 768px) {
-  .loading-animation {
-    width: 12rem;
-  }
-}
-
-@media (min-width: 1280px) {
-  .loading-animation {
-    width: 14rem;
-  }
-}
-
-.loading-animation {
-  height: auto;
-  image-rendering: pixelated;
-}
-
-.loading-animation.flipped {
-  transform: scaleX(-1);
-}
-
-#loading-screen.hidden {
-  pointer-events: none;
-  opacity: 0;
-}
-
-.fade-in {
-  opacity: 0;
-  transition: opacity 0.8s var(--ease-in);
-}
-
-.fade-in.visible {
-  opacity: 1;
-}
-
 .work-container {
   position: relative;
   display: flex;
@@ -879,12 +820,21 @@ a:hover {
   align-items: center;
   justify-content: space-between;
   padding-bottom: 4rem;
+  opacity: 0;
 }
 
 @media (min-width: 768px) {
   .works section {
     padding-bottom: 8rem;
   }
+}
+
+.works section {
+  transition: opacity 1.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.works section.animate {
+  opacity: 1;
 }
 
 .works section > div {
@@ -1711,6 +1661,10 @@ a:hover {
   opacity: 0;
 }
 
+.opacity-100 {
+  opacity: 1;
+}
+
 .outline {
   outline-style: solid;
 }
@@ -1799,40 +1753,12 @@ a:hover {
     position: fixed;
   }
 
-  .md\:mt-\[-300px\] {
-    margin-top: -300px;
-  }
-
-  .md\:mt-\[-500px\] {
-    margin-top: -500px;
-  }
-
-  .md\:mt-\[-33vh\] {
-    margin-top: -33vh;
-  }
-
-  .md\:mt-\[-200px\] {
-    margin-top: -200px;
-  }
-
-  .md\:mt-\[-150px\] {
-    margin-top: -150px;
-  }
-
-  .md\:mt-\[-160px\] {
-    margin-top: -160px;
+  .md\:mt-\[-240px\] {
+    margin-top: -240px;
   }
 
   .md\:mt-\[-480px\] {
     margin-top: -480px;
-  }
-
-  .md\:mt-\[-320px\] {
-    margin-top: -320px;
-  }
-
-  .md\:mt-\[-240px\] {
-    margin-top: -240px;
   }
 
   .md\:mt-\[-80px\] {
@@ -1841,10 +1767,6 @@ a:hover {
 
   .md\:h-\[640px\] {
     height: 640px;
-  }
-
-  .md\:w-48 {
-    width: 12rem;
   }
 
   .md\:max-w-\[30vw\] {
@@ -1884,11 +1806,5 @@ a:hover {
   .md\:text-lg {
     font-size: 1.125rem;
     line-height: 1.75rem;
-  }
-}
-
-@media (min-width: 1280px) {
-  .xl\:w-56 {
-    width: 14rem;
   }
 }

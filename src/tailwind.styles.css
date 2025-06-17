@@ -64,39 +64,6 @@
 }
 
 @layer components {
-    #loading-screen {
-        @apply fixed inset-0 w-full h-screen z-50 flex items-center justify-center bg-white;
-        height: calc(var(--vh, 1vh) * 100);
-        transition: opacity 0.8s var(--ease-out);
-    }
-
-    .loader-content {
-        @apply text-center;
-    }
-
-    .loading-animation {
-        @apply w-40 md:w-48 xl:w-56 opacity-90;
-        height: auto;
-        image-rendering: pixelated;
-    }
-
-    .loading-animation.flipped {
-        transform: scaleX(-1);
-    }
-
-    #loading-screen.hidden {
-        @apply opacity-0 pointer-events-none;
-    }
-
-    .fade-in {
-        @apply opacity-0;
-        transition: opacity 0.8s var(--ease-in);
-    }
-
-    .fade-in.visible {
-        @apply opacity-100;
-    }
-
     .work-container {
         @apply relative flex flex-col gap-y-8 md:gap-y-20;
     }
@@ -176,7 +143,12 @@
     }
     
     .works section {
-        @apply pb-16 md:pb-32 flex justify-between items-center;
+        @apply pb-16 md:pb-32 flex justify-between items-center opacity-0;
+        transition: opacity 1.2s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    .works section.animate {
+        @apply opacity-100;
     }
     
     .works section > div {
