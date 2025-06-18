@@ -579,25 +579,18 @@ body {
   min-height: 100vh;
   --tw-bg-opacity: 1;
   background-color: rgb(0 0 0 / var(--tw-bg-opacity, 1));
-  font-size: 1rem;
-  line-height: 1.5rem;
+  font-size: 1.25rem;
+  line-height: 1.75rem;
   --tw-text-opacity: 1;
   color: rgb(229 229 229 / var(--tw-text-opacity, 1));
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-@media (min-width: 768px) {
-  body {
-    font-size: 1.125rem;
-    line-height: 1.75rem;
-  }
-}
-
 @media (min-width: 1280px) {
   body {
-    font-size: 1.25rem;
-    line-height: 1.75rem;
+    font-size: 1.5rem;
+    line-height: 2rem;
   }
 }
 
@@ -758,6 +751,15 @@ a:hover {
   padding-left: 1.5rem;
   padding-right: 1.5rem;
   padding-bottom: 2rem;
+  font-size: 1.125rem;
+  line-height: 1.75rem;
+}
+
+@media (min-width: 1280px) {
+  .work-meta {
+    font-size: 1.25rem;
+    line-height: 1.75rem;
+  }
 }
 
 @media (min-width: 768px) {
@@ -1587,6 +1589,10 @@ a:hover {
   font-weight: 435;
 }
 
+.font-bold {
+  font-weight: 700;
+}
+
 .font-light {
   font-weight: 300;
 }
@@ -1780,6 +1786,18 @@ a:hover {
   color: rgb(115 115 115 / var(--tw-text-opacity, 1));
 }
 
+.text-small {
+  font-size: 1.125rem;
+  line-height: 1.75rem;
+}
+
+@media (min-width: 1280px) {
+  .text-small {
+    font-size: 1.25rem;
+    line-height: 1.75rem;
+  }
+}
+
 :root {
   --ease-in: cubic-bezier(0.4, 0, 0.2, 1);
   --ease-out: cubic-bezier(0, 0, 0.2, 1);
@@ -1849,9 +1867,10 @@ a:hover {
   .md\:pb-32 {
     padding-bottom: 8rem;
   }
+}
 
-  .md\:text-lg {
-    font-size: 1.125rem;
-    line-height: 1.75rem;
+@media (min-width: 1280px) {
+  .xl\:max-w-full {
+    max-width: 100%;
   }
 }
