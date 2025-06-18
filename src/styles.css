@@ -1870,7 +1870,7 @@ a:hover {
 }
 
 @media (min-width: 1280px) {
-  .xl\:max-w-full {
-    max-width: 100%;
+  .xl\:max-w-2xl {
+    max-width: 42rem;
   }
 }
