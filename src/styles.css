@@ -844,7 +844,7 @@ a:hover {
 
 @media (min-width: 768px) {
   .works section > div.s {
-    max-width: 35vw;
+    max-width: 32vw;
   }
 }
 
@@ -1816,8 +1816,8 @@ a:hover {
     height: 640px;
   }
 
-  .md\:max-w-\[35vw\] {
-    max-width: 35vw;
+  .md\:max-w-\[32vw\] {
+    max-width: 32vw;
   }
 
   .md\:max-w-\[50vw\] {

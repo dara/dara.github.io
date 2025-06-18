@@ -149,7 +149,7 @@
     }
     
     .works section > div.s {
-        @apply max-w-[100vw] md:max-w-[35vw];
+        @apply max-w-[100vw] md:max-w-[32vw];
     }
     
     .works section > div.r {
