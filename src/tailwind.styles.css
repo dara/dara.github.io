@@ -34,6 +34,10 @@
         scrollbar-width: none;
     }
 
+    p {
+        @apply leading-[1.4];
+    }
+
     img, video {
         @apply max-w-none h-auto;
     }
