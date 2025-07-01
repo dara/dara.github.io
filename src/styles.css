@@ -672,6 +672,58 @@ a:hover {
   }
 }
 
+.work-header {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+}
+
+@media (min-width: 768px) {
+  .work-header {
+    flex-direction: row;
+    gap: 4rem;
+    padding-left: 4rem;
+    padding-right: 4rem;
+  }
+}
+
+.work-title {
+  flex: 1 1 0%;
+}
+
+.work-title h1 {
+  line-height: 2rem;
+  font-size: 2.25rem;
+  line-height: 1.25;
+}
+
+@media (min-width: 1024px) {
+  .work-title h1 {
+    font-size: 3rem;
+    line-height: 1.25;
+  }
+}
+
+.work-description {
+  max-width: 42rem;
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+}
+
+@media (min-width: 768px) {
+  .work-description {
+    padding-left: 4rem;
+    padding-right: 4rem;
+  }
+}
+
+.work-description-content {
+  max-width: none;
+  flex: 1 1 0%;
+}
+
 .work-images {
   position: relative;
   display: flex;
@@ -698,19 +750,6 @@ a:hover {
 
 .work-images.show {
   opacity: 1;
-}
-
-.work-description {
-  max-width: 42rem;
-  padding-left: 1.5rem;
-  padding-right: 1.5rem;
-}
-
-@media (min-width: 768px) {
-  .work-description {
-    padding-left: 4rem;
-    padding-right: 4rem;
-  }
 }
 
 .work-images::after {
@@ -1243,6 +1282,10 @@ a:hover {
   max-width: 36rem;
 }
 
+.flex-1 {
+  flex: 1 1 0%;
+}
+
 .flex-none {
   flex: none;
 }
@@ -1290,6 +1333,10 @@ a:hover {
 
 .grid-cols-4 {
   grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
+.flex-row {
+  flex-direction: row;
 }
 
 .flex-col {
@@ -1668,6 +1715,11 @@ a:hover {
   line-height: 2.5rem;
 }
 
+.text-4xl\/\[1\.25\] {
+  font-size: 2.25rem;
+  line-height: 1.25;
+}
+
 .text-5xl {
   font-size: 3rem;
   line-height: 1;
@@ -1681,11 +1733,6 @@ a:hover {
 .text-7xl {
   font-size: 4.5rem;
   line-height: 1;
-}
-
-.text-\[39px\]\/\[1\.2\] {
-  font-size: 39px;
-  line-height: 1.2;
 }
 
 .text-base {
@@ -1711,10 +1758,6 @@ a:hover {
 .text-xs {
   font-size: 0.75rem;
   line-height: 1rem;
-}
-
-.font-\[400\] {
-  font-weight: 400;
 }
 
 .font-\[435\] {
@@ -1992,6 +2035,10 @@ a:hover {
     grid-template-columns: repeat(3, minmax(0, 1fr));
   }
 
+  .md\:flex-row {
+    flex-direction: row;
+  }
+
   .md\:gap-x-20 {
     -moz-column-gap: 5rem;
          column-gap: 5rem;
@@ -2023,14 +2070,16 @@ a:hover {
     padding-bottom: 8rem;
   }
 
-  .md\:text-5xl\/\[1\.3\] {
-    font-size: 3rem;
-    line-height: 1.3;
-  }
-
   .md\:text-xl {
     font-size: 1.25rem;
     line-height: 1.75rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .lg\:text-5xl\/\[1\.25\] {
+    font-size: 3rem;
+    line-height: 1.25;
   }
 }
 
