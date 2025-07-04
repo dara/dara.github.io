@@ -1421,6 +1421,14 @@ a:hover {
   gap: 2rem;
 }
 
+.gap-40 {
+  gap: 10rem;
+}
+
+.gap-28 {
+  gap: 7rem;
+}
+
 .gap-x-0 {
   -moz-column-gap: 0px;
        column-gap: 0px;
@@ -2060,6 +2068,22 @@ a:hover {
 
   .md\:gap-20 {
     gap: 5rem;
+  }
+
+  .md\:gap-24 {
+    gap: 6rem;
+  }
+
+  .md\:gap-40 {
+    gap: 10rem;
+  }
+
+  .md\:gap-32 {
+    gap: 8rem;
+  }
+
+  .md\:gap-28 {
+    gap: 7rem;
   }
 
   .md\:gap-x-20 {
