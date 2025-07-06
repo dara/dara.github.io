@@ -43,7 +43,10 @@ class D3TreeVisualization {
     
     setupTree() {
         this.tree = d3.tree()
-            .size([this.height * 2, this.width]);
+            .size([this.height * 2.5, this.width * 1.2])
+            .separation((a, b) => {
+                return a.parent === b.parent ? 2 : 2.5;
+            });
     }
     
     async loadData() {
@@ -57,36 +60,41 @@ class D3TreeVisualization {
             // Fallback to test data
             this.data = {
                 name: "Coffee Flavors",
+                color: "#ffffff",
                 children: [
                     {
                         name: "Roasted",
+                        color: "#ba7d38",
                         children: [
-                            { name: "Pipe Tobacco" },
-                            { name: "Tobacco" },
-                            { name: "Burnt" }
+                            { name: "Pipe Tobacco", color: "#967758" },
+                            { name: "Tobacco", color: "#956E50" },
+                            { name: "Burnt", color: "#261816" }
                         ]
                     },
                     {
                         name: "Spices",
+                        color: "#b90d41",
                         children: [
-                            { name: "Pungent" },
-                            { name: "Pepper" },
-                            { name: "Brown Spice" }
+                            { name: "Pungent", color: "#734864" },
+                            { name: "Pepper", color: "#9C1C30" },
+                            { name: "Brown Spice", color: "#99642B" }
                         ]
                     },
                     {
                         name: "Nutty/Cocoa",
+                        color: "#9a7b79",
                         children: [
-                            { name: "Nutty" },
-                            { name: "Cocoa" }
+                            { name: "Nutty", color: "#b59287" },
+                            { name: "Cocoa", color: "#6B5042" }
                         ]
                     },
                     {
                         name: "Sweet",
+                        color: "#E8A022",
                         children: [
-                            { name: "Brown Sugar" },
-                            { name: "Vanilla" },
-                            { name: "Vanillin" }
+                            { name: "Brown Sugar", color: "#A27248" },
+                            { name: "Vanilla", color: "#F0EAD9" },
+                            { name: "Vanillin", color: "#ECDBC4" }
                         ]
                     }
                 ]
@@ -98,12 +106,16 @@ class D3TreeVisualization {
     transformData(coffeeFlavors) {
         const transformedData = {
             name: "Flavor tree",
+            color: "#ffffff", // Default color for root
             children: coffeeFlavors.map(flavor => ({
                 name: flavor.name,
+                color: flavor.color,
                 children: flavor.children ? flavor.children.map(child => ({
                     name: child.name,
+                    color: child.color,
                     children: child.children ? child.children.map(grandchild => ({
-                        name: grandchild.name
+                        name: grandchild.name,
+                        color: grandchild.color
                     })) : null
                 })) : null
             }))
@@ -140,11 +152,12 @@ class D3TreeVisualization {
             .attr("transform", d => `translate(${d.y},${d.x})`);
         
         node.append("circle")
-            .attr("r", 4.5);
+            .attr("r", 7)
+            .style("fill", d => d.data.color || "#f5f5f5");
         
         node.append("text")
             .attr("dy", "0.25em")
-            .attr("x", d => d.children ? -8 : 8)
+            .attr("x", d => d.children ? -14 : 14)
             .style("text-anchor", d => d.children ? "end" : "start")
             .text(d => d.data.name);
         
