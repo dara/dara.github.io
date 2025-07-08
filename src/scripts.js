@@ -1,13 +1,12 @@
 // Preloader functionality
 function hidePreloader() {
     const preloader = document.getElementById('preloader');
-    const mainContent = document.getElementById('main-content');
+    const preloadable = document.getElementById('preloadable');
     
-    if (preloader && mainContent) {
+    if (preloader && preloadable) {
         preloader.classList.add('fade-out');
-        mainContent.classList.add('loaded');
+        preloadable.classList.add('loaded');
         
-        // Remove preloader from DOM after transition
         setTimeout(() => {
             preloader.remove();
         }, 800);
@@ -28,7 +27,6 @@ function waitForAllAssets() {
     function checkAllLoaded() {
         loadedAssets++;
         if (loadedAssets === totalAssets) {
-            // Add a small delay to ensure smooth transition
             setTimeout(hidePreloader, 300);
         }
     }
@@ -45,10 +43,13 @@ function waitForAllAssets() {
 
 function showWorkImages() {
     const workImages = document.querySelectorAll('.work-images');
+    const workMain = document.querySelectorAll('.work-main');
     const workMeta = document.querySelectorAll('.work-meta');
     
     workImages.forEach(images => images.classList.add('show'));
+    workMain.forEach(main => main.classList.add('show'));
     workMeta.forEach(meta => meta.classList.add('show'));
+    
 }
 
 function animateRevealables() {

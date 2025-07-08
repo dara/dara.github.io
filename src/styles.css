@@ -657,19 +657,6 @@ a:hover {
   }
 }
 
-.work-container {
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  row-gap: 3rem;
-}
-
-@media (min-width: 768px) {
-  .work-container {
-    row-gap: 5rem;
-  }
-}
-
 .work-header {
   display: flex;
   flex-direction: column;
@@ -724,6 +711,8 @@ a:hover {
 
 .work-images {
   position: relative;
+  margin-top: 3rem;
+  margin-bottom: 3rem;
   display: flex;
   height: 48vw;
   width: 100vw;
@@ -735,6 +724,8 @@ a:hover {
 
 @media (min-width: 768px) {
   .work-images {
+    margin-top: 5rem;
+    margin-bottom: 5rem;
     height: 640px;
     padding-left: 5rem;
     padding-right: 5rem;
@@ -747,6 +738,8 @@ a:hover {
 }
 
 .work-main {
+  opacity: 0;
+  transition: opacity 2s ease-out;
   display: flex;
   flex-direction: column;
   row-gap: 2rem;
@@ -761,6 +754,10 @@ a:hover {
     row-gap: 5rem;
     padding: 5rem;
   }
+}
+
+.work-main.show {
+  opacity: 1;
 }
 
 .work-images.show {
@@ -940,12 +937,12 @@ a:hover {
   opacity: 0;
 }
 
-.main-content {
+.preloadable {
   opacity: 0;
   transition: opacity 1s var(--ease-out);
 }
 
-.main-content.loaded {
+.preloadable.loaded {
   opacity: 1;
 }
 
@@ -1050,6 +1047,11 @@ a:hover {
 .my-12 {
   margin-top: 3rem;
   margin-bottom: 3rem;
+}
+
+.my-20 {
+  margin-top: 5rem;
+  margin-bottom: 5rem;
 }
 
 .my-8 {
@@ -2052,6 +2054,11 @@ a:hover {
 }
 
 @media (min-width: 768px) {
+  .md\:my-20 {
+    margin-top: 5rem;
+    margin-bottom: 5rem;
+  }
+
   .md\:mb-8 {
     margin-bottom: 2rem;
   }
