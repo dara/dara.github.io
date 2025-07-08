@@ -12,7 +12,9 @@
   "scripts": {
     "dev": "concurrently \"npx tailwindcss -i ./src/tailwind.styles.css -o ./src/styles.css --watch --poll\" \"live-server --port=3000 --host=0.0.0.0 --open=./\"",
     "tailwind": "npx tailwindcss -i ./src/tailwind.styles.css -o ./src/styles.css --watch --poll",
-    "serve": "live-server --port=3000 --host=0.0.0.0 --open=./"
+    "serve": "live-server --port=3000 --host=0.0.0.0 --open=./",
+    "cache-bust": "node scripts/cache-bust.js",
+    "build": "npx tailwindcss -i ./src/tailwind.styles.css -o ./src/styles.css --minify && npm run cache-bust"
   },
   "browserslist": [
     "defaults",
